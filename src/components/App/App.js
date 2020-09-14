@@ -8,6 +8,8 @@ import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
+import GameWindow from '../Games/GameWindow'
+import GameCreate from '../Games/GameCreate'
 
 class App extends Component {
   constructor () {
@@ -41,6 +43,10 @@ class App extends Component {
             message={msgAlert.message}
           />
         ))}
+
+        <GameWindow user={user} />
+
+        {/* _____Authentication Routes for Users_____ */}
         <main className="container">
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
@@ -54,8 +60,27 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
+
+          {/* _____RESTful Routes for Games_____ */}
+          {
+          // <AuthenticatedRoute user={user} exact path='/games' render={() => (
+          //   <GameIndex msgAlert={this.msgAlert} user={user} />
+          // )} />
+          // <AuthenticatedRoute user={user} exact path='/games/:id' render={(data) => (
+          //   <GameShow msgAlert={this.msgAlert} user={user} id={data.match.params.id}/>
+          // )} />
+          }
+          <AuthenticatedRoute user={user} exact path='/games-create' render={() => (
+            <GameCreate msgAlert={this.msgAlert} user={user} />
+          )} />
+          {
+          // <AuthenticatedRoute user={user} exact path='/memories/:id/edit' render={(data) => (
+          //   <MemoryUpdate msgAlert={this.msgAlert} user={user} id={data.match.params.id}/>
+          // )} />
+          }
         </main>
       </Fragment>
+
     )
   }
 }
