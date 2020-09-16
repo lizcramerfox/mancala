@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+//import { Button } from 'react-bootstrap'
 //import { Redirect } from 'react-router-dom'
 
 import { gameCreate } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
-import GameWindow from './GameWindow'
+import GameBoard from './GameBoard'
 
 class GameCreate extends Component {
   constructor () {
@@ -16,13 +17,12 @@ class GameCreate extends Component {
     }
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault()
-    const { msgAlert } = this.props
-    gameCreate(this.props.user, this.state.game)
+  componentDidMount() {
+    const { msgAlert, user } = this.props
+    gameCreate(user)
       .then(res => {
         // take the ID that was created and set it to the game
-        this.setState({ createdId: res.data.game.id })
+        this.setState({ game: res.data })
       })
       .then(() => {
         msgAlert({
@@ -41,14 +41,16 @@ class GameCreate extends Component {
   }
 
   render () {
-    // const { game } = this.state
+    const { game } = this.state
 
     let gameJsx = (
-      <GameWindow />
+      <GameBoard />
     )
+
 
     return (
       <div>
+        <span>Game ID: { game.id }</span>
         { gameJsx }
       </div>
     )

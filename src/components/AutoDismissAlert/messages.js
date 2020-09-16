@@ -5,5 +5,11 @@ export default {
   signInFailure: 'Failed to sign in. Check your email and password and try again.',
   signOutSuccess: 'Come back soon!',
   changePasswordSuccess: 'Password changed successfully!',
-  changePasswordFailure: 'Failed to change passwords. Check your old password and try again.'
+  changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
+  gameCreateSuccess: 'Create new game success.',
+  gameCreateFailure: 'Create new game failed.',
+  gameShowSuccess: 'Game displayed successfully',
+  gameShowFailure: 'Failed to display game.',
+  gameIndexSuccess: 'All games successfuly displayed.',
+  gameIndexFailure: 'Failed to load all games for display.',
 }

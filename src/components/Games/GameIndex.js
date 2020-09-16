@@ -1,63 +1,58 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { Card, Button } from 'react-bootstrap'
-import { memoryIndex } from '../../api/memory'
+//import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
+import { gameIndex } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
 
-class MemoryIndex extends Component {
+class GameIndex extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      memories: []
+      games: []
     }
   }
 
   componentDidMount () {
-    const { msgAlert } = this.props
-
-    memoryIndex(this.props.user)
+    console.log("gameIndex componentDidMount")
+    const { msgAlert, user } = this.props
+    gameIndex(user)
       .then(res => {
-        this.setState({ memories: res.data.memories })
+        this.setState({ games: res.data })
+      })
+      .then(() => {
+        msgAlert({
+          heading: 'Index All Games Success',
+          variant: 'success',
+          message: messages.gameIndexSuccess
+        })
       })
       .catch(() => {
         msgAlert({
-          heading: 'Show All Memories Failed',
+          heading: 'Index All Games Failed',
           variant: 'danger',
-          message: messages.memoryShowFailure
+          message: messages.gamesIndexFailure
         })
       })
   }
 
   render () {
-    const { memories } = this.state
+    const { games } = this.state
 
-    let memoriesJsx
-
-    if (this.state.memories.length < 1) {
-      memoriesJsx = (<h3>Nothing to view - please add a memory.</h3>)
-    } else {
-      memoriesJsx = (memories.map(memory => (
-        <Card key={memory.id}>
-          <Card.Header>{memory.title}</Card.Header>
-          <Card.Body>
-            <Card.Text>{memory.description}</Card.Text>
-            <Link to={`/memories/${memory.id}`}>
-              <Button block="true">
-              View Memory
-              </Button>
-            </Link>
-          </Card.Body>
-        </Card>
-      )))
+    if (this.length < 1) {
+      return (<h3>Nothing to view - Click "Start a New Game".</h3>)
     }
+
+    const gamesJsx = games.map(game => <li><Button>Game {game.id}</Button></li>)
 
     return (
       <div>
-        {memoriesJsx}
+        <ul>
+          {gamesJsx}
+        </ul>
       </div>
     )
   }
 }
 
-export default MemoryIndex
+export default GameIndex
