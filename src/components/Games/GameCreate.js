@@ -11,7 +11,7 @@ class GameCreate extends Component {
     super()
     this.state = {
       game: {
-        over: false
+        isOver: false
       },
       createdId: null
     }
