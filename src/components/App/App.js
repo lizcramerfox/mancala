@@ -10,6 +10,7 @@ import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 import GameCreate from '../Games/GameCreate'
 import GameIndex from '../Games/GameIndex'
+import GameShow from '../Games/GameShow'
 
 class App extends Component {
   constructor () {
@@ -63,12 +64,9 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/games' render={() => (
             <GameIndex msgAlert={this.msgAlert} user={user} />
           )} />
-          {
-          // <AuthenticatedRoute user={user} exact path='/games/:id' render={(data) => (
-          //   <GameShow msgAlert={this.msgAlert} user={user} id={data.match.params.id}/>
-          // )} />
-          // }
-          }
+          <AuthenticatedRoute user={user} exact path='/games/:id' render={(data) => (
+            <GameShow msgAlert={this.msgAlert} user={user} id={data.match.params.id}/>
+          )} />
           <AuthenticatedRoute user={user} exact path='/games-create' render={() => (
             <GameCreate msgAlert={this.msgAlert} user={user} />
           )} />

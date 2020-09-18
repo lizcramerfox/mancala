@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-//import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import { gameIndex } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
@@ -15,10 +15,10 @@ class GameIndex extends Component {
 
   componentDidMount () {
     console.log("gameIndex componentDidMount")
-    const { msgAlert, user } = this.props
-    gameIndex(user)
+    const { msgAlert } = this.props
+    gameIndex(this.props.user)
       .then(res => {
-        this.setState({ games: res.data })
+        this.setState({ games: res.data.games })
       })
       .then(() => {
         msgAlert({
@@ -43,7 +43,13 @@ class GameIndex extends Component {
       return (<h3>Nothing to view - Click "Start a New Game".</h3>)
     }
 
-    const gamesJsx = games.map(game => <li><Button>Game {game.id}</Button></li>)
+    const gamesJsx = games.map(game => (
+      <li key={game.id}>
+        <Link to={`/games/${game.id}`}>
+          <Button>Game {game.id}</Button>
+        </Link>
+      </li>
+    ))
 
     return (
       <div>

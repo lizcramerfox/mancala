@@ -31,23 +31,23 @@ export const gameCreate = (user) => {
   })
 }
 
-// export const gameUpdate = (user, game, id) => {
-//   return axios({
-//     url: apiUrl + `/memories/${id}`,
-//     method: 'PATCH',
-//     headers: {
-//       'Authorization': `Token token=${user.token}`
-//     },
-//     data: {
-//       game: {
-//         title: game.title,
-//         description: game.description,
-//         people: game.people
-//       }
-//     }
-//   })
-// }
-//
+export const gameUpdate = (user, game, id) => {
+  return axios({
+    url: apiUrl + `/memories/${id}`,
+    method: 'PATCH',
+    headers: {
+      'Authorization': `Token token=${user.token}`
+    },
+    data: {
+      game: {
+        title: game.title,
+        description: game.description,
+        people: game.people
+      }
+    }
+  })
+}
+
 // export const gameDestroy = (user, id) => {
 //   return axios({
 //     url: apiUrl + `/memories/${id}`,
