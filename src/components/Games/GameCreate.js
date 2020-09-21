@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-//import { Button } from 'react-bootstrap'
-//import { Redirect } from 'react-router-dom'
+import React, { Component, Fragment } from 'react'
+import { Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 import { gameCreate } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
-import GameBoard from './GameBoard'
+// import GameBoard from './GameBoard'
 
 class GameCreate extends Component {
   constructor () {
@@ -41,18 +41,25 @@ class GameCreate extends Component {
   }
 
   render () {
-    const { game } = this.state
+    const { createdId } = this.state
 
     let gameJsx = (
-      <GameBoard />
+      <Fragment>
+        <div>
+          <h5>Game ID: {createdId}</h5>
+        </div>
+        <div>
+          <Link to={`/games/${createdId}/edit`}>
+            <Button onClick={this.continueGame}>Continue Playing Game?</Button>
+          </Link>
+          <Button onClick={this.deleteGame}>Delete Game?</Button>
+        </div>
+      </Fragment>
     )
 
 
     return (
-      <div>
-        <span>Game ID: { game.id }</span>
-        { gameJsx }
-      </div>
+      { gameJsx }
     )
   }
 }

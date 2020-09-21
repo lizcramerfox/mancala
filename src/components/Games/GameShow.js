@@ -1,27 +1,25 @@
 import React, { Component, Fragment } from 'react'
 import { Button } from 'react-bootstrap'
-import { gameShow, gameDestroy } from '../../api/game'
+import { gameShow, gameDestroy, gameUpdate } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
-import { Redirect } from 'react-router-dom'
-// import GameBoard from './GameBoard'
+import { Link, Redirect } from 'react-router-dom'
 
 class GameShow extends Component {
-  constructor (props) {
-    super(props)
+  constructor () {
+    super()
     this.state = {
       game: {
-        deleted: false
+        board: ''
       }
     }
   }
 
   componentDidMount () {
     const { msgAlert, user, id } = this.props
-    console.log(`in componentDidMount, user= ${user}`)
+
     gameShow(user, id)
       .then(res => {
         this.setState({ game: res.data.game })
-        console.log(`in componentDidMount, res.data.game = ${res.data.game}`)
       })
       .then(() => {
         msgAlert({
@@ -41,11 +39,8 @@ class GameShow extends Component {
 
   deleteGame = () => {
     const { msgAlert, user, id } = this.props
-    console.log(`this.props.id: ${this.props.id}`)
-    console.log(`this.user= ${this.user}`)
 
-    gameDestroy(user, id)
-      .then(() => this.setState({ deleted: true }))
+    gameDestroy(user, id, this.state.game)
       .then(() => {
         msgAlert({
           heading: 'Delete Game Success',
@@ -60,23 +55,51 @@ class GameShow extends Component {
           message: messages.gameDeleteFailure
         })
       })
+    console.log(this.state.game)
+  }
+
+  continueGame = () => {
+    const { msgAlert, user, id } = this.props
+
+    gameUpdate(user, id)
+      .then((res) => {
+        this.setState({ game: res.data.game })
+      })
+      .then(() => {
+        msgAlert({
+          heading: 'Continue Game Success',
+          variant: 'success',
+          message: messages.gameUpdateSuccess
+        })
+      })
+      .catch(() => {
+        msgAlert({
+          heading: 'Continue Game Failed',
+          variant: 'danger',
+          message: messages.gameUpdateFailure
+        })
+      })
   }
 
   render () {
     const { game } = this.state
+    let gameJsx
 
     if (!game) {
-      return (<p>Loading...</p>)
+      gameJsx = <Redirect to={`/games`} />
     }
 
-    if (this.state.deleted) {
-      return (<Redirect to='/memories' />)
-    }
-
-    const gameJsx = (
+    gameJsx = (
       <Fragment>
-        <Button>Game ID: {this.props.id}</Button>
-        <Button onClick={this.deleteGame}>Delete Game?</Button>
+        <div>
+          <h5>Game ID: {this.props.id}</h5>
+        </div>
+        <div>
+          <Link to={`/games/${this.state.game.id}/edit`}>
+            <Button onClick={this.continueGame}>Continue Playing Game?</Button>
+          </Link>
+          <Button onClick={this.deleteGame}>Delete Game?</Button>
+        </div>
       </Fragment>
     )
 

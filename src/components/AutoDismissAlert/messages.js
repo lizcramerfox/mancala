@@ -12,8 +12,8 @@ export default {
   gameShowFailure: 'Failed to display game.',
   gameIndexSuccess: 'All games successfuly displayed.',
   gameIndexFailure: 'Failed to load all games for display.',
-  gameUpdateSuccess: 'Game progress updated.',
-  gameUpdateFailure: 'Failed to save changes to game in progress.',
+  gameUpdateSuccess: 'Game-in-progress loaded successfully.',
+  gameUpdateFailure: 'Failed to load game in progress.',
   gameDestroySuccess: 'Game successfully deleted.',
-  gameDestroyFailure: 'Failed delete game.'
+  gameDestroyFailure: 'Failed to delete game.'
 }

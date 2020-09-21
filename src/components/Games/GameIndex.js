@@ -14,7 +14,6 @@ class GameIndex extends Component {
   }
 
   componentDidMount () {
-    console.log("gameIndex componentDidMount")
     const { msgAlert } = this.props
     gameIndex(this.props.user)
       .then(res => {
@@ -39,7 +38,7 @@ class GameIndex extends Component {
   render () {
     const { games } = this.state
 
-    if (this.length < 1) {
+    if (games.length < 1) {
       return (<h3>Nothing to view - Click "Start a New Game".</h3>)
     }
 
