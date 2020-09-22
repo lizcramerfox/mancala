@@ -21,8 +21,6 @@ class GameCreate extends Component {
     gameCreate(user, this.state.game.toJSON())
       .then(res => {
         // take the ID that was created and set it to the game
-        console.log(res)
-        console.log(Game.fromJSON(res.data.game))
         this.setState({
           game: Game.fromJSON(res.data.game),
           id: res.data.game.id

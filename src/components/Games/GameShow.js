@@ -1,35 +1,42 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 // import { Button } from 'react-bootstrap'
-import { gameShow, gameDestroy, gameUpdate } from '../../api/game'
+import { gameShow /*, gameDestroy, gameUpdate */} from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
-import { Redirect } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
+import Game from './Game'
+import Mancala from 'mancala'
 
 class GameShow extends Component {
-  constructor () {
-    super()
+
+  constructor (props) {
+    super(props)
+
     this.state = {
-      game: {
-        id: null,
-      }
+      game: null,
+      id: null
     }
   }
 
   componentDidMount () {
-    const { msgAlert, user, game, id } = this.props
+    const { msgAlert, user, id } = this.props
 
-    gameShow(user, game, id)
+    gameShow(user, id)
       .then(res => {
-        this.setState({ game: res.data.game })
-        console.log(this.state)
+        console.log(`RES DATA: `, res.data)
+        this.setState({
+          game: Mancala.Game.fromJSON(res.data.game),
+          id: res.data.game.id
+        })
       })
       .then(() => {
         msgAlert({
-          heading: 'Show Game Sucess',
+          heading: 'Show Game Success',
           variant: 'success',
           message: messages.gameShowSuccess
         })
       })
       .catch(() => {
+        console.log('catch in GameShow')
         msgAlert({
           heading: 'Show Game Failed',
           variant: 'danger',
@@ -83,18 +90,15 @@ class GameShow extends Component {
   // }
 
   render () {
+    console.log(this.props.game)
     let gameJsx
 
-    if (!this.state.game) {
-      gameJsx = <Redirect to={`/games`} />
+    if (!this.props.game) {
+      gameJsx = "GameShow loading..."
     }
 
     gameJsx = (
-      <Fragment>
-        <div>
-          <h5>Game ID: {this.state.game.id}</h5>
-        </div>
-      </Fragment>
+      <Game game={this.props.game} id={this.state.id} />
     )
 
     return (
