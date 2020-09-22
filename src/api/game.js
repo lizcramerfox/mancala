@@ -11,13 +11,14 @@ export const gameIndex = (user) => {
   })
 }
 
-export const gameShow = (user, id) => {
+export const gameShow = (user, game, id) => {
   return axios({
     url: apiUrl + `/games/${id}`,
     method: 'GET',
     headers: {
       'Authorization': `Token token=${user.token}`
-    }
+    },
+    data: game,
   })
 }
 
