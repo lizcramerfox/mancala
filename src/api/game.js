@@ -21,13 +21,14 @@ export const gameShow = (user, id) => {
   })
 }
 
-export const gameCreate = (user) => {
+export const gameCreate = (user, game) => {
   return axios({
     url: apiUrl + '/games',
     method: 'POST',
     headers: {
       'Authorization': `Token token=${user.token}`
     },
+    data: game,
   })
 }
 
@@ -38,7 +39,7 @@ export const gameUpdate = (user, game, id) => {
     headers: {
       'Authorization': `Token token=${user.token}`
     },
-    data: { }
+    data: game,
   })
 }
 

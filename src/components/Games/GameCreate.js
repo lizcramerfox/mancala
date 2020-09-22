@@ -1,28 +1,32 @@
 import React, { Component, Fragment } from 'react'
-import { Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+// import { Button } from 'react-bootstrap'
+// import { Redirect } from 'react-router-dom'
 
 import { gameCreate } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
+import { Game } from 'mancala'
 // import GameBoard from './GameBoard'
 
 class GameCreate extends Component {
   constructor () {
     super()
     this.state = {
-      game: {
-        isOver: false
-      },
-      createdId: null
+      game: new Game({}),
+      id: null
     }
   }
 
   componentDidMount() {
     const { msgAlert, user } = this.props
-    gameCreate(user)
+    gameCreate(user, this.state.game.toJSON())
       .then(res => {
         // take the ID that was created and set it to the game
-        this.setState({ game: res.data })
+        console.log(res)
+        console.log(Game.fromJSON(res.data.game))
+        this.setState({
+          game: Game.fromJSON(res.data.game),
+          id: res.data.game.id
+        })
       })
       .then(() => {
         msgAlert({
@@ -41,25 +45,12 @@ class GameCreate extends Component {
   }
 
   render () {
-    const { createdId } = this.state
-
-    let gameJsx = (
+    return (
       <Fragment>
         <div>
-          <h5>Game ID: {createdId}</h5>
-        </div>
-        <div>
-          <Link to={`/games/${createdId}/edit`}>
-            <Button onClick={this.continueGame}>Continue Playing Game?</Button>
-          </Link>
-          <Button onClick={this.deleteGame}>Delete Game?</Button>
+          <h5>Game ID: {this.state.id}</h5>
         </div>
       </Fragment>
-    )
-
-
-    return (
-      { gameJsx }
     )
   }
 }
