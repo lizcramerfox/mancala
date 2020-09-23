@@ -22,7 +22,6 @@ class GameShow extends Component {
 
     gameShow(user, id)
       .then(res => {
-        console.log(`RES DATA: `, res.data)
         this.setState({
           game: Mancala.Game.fromJSON(res.data.game),
           id: res.data.game.id
@@ -36,7 +35,6 @@ class GameShow extends Component {
         })
       })
       .catch(() => {
-        console.log('catch in GameShow')
         msgAlert({
           heading: 'Show Game Failed',
           variant: 'danger',
@@ -90,15 +88,14 @@ class GameShow extends Component {
   // }
 
   render () {
-    console.log(this.props.game)
     let gameJsx
 
-    if (!this.props.game) {
-      gameJsx = "GameShow loading..."
+    if (!this.state.game) {
+      return <p>"GameShow loading..."</p>
     }
 
     gameJsx = (
-      <Game game={this.props.game} id={this.state.id} />
+      <Game game={this.state.game} id={this.state.id} />
     )
 
     return (

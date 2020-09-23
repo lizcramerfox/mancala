@@ -12,53 +12,44 @@ class GameInfo extends Component {
 
 class Pocket extends Component {
   render () {
+    const { pocket, stones } = this.props
+    const { player, isMancala } = pocket
+
+    const playerClass = `player-${player}`
+    const typeClass = isMancala ? `mancala` : `non-mancala`
+    const pocketID = `pocket-${pocket.toString()}`
+
+    const classes = [playerClass, typeClass].join(' ')
+
     return (
       <Fragment>
-        <div className="pocket">{this.boardPosition}</div>
+        <div className={classes} id={pocketID}>{pocket.toString()} : {stones}</div>
       </Fragment>
     )
   }
 }
 
 class Board extends Component {
+
   render () {
+    const boardJsx = Array.from(this.props.board.pockets.entries()).map(([pocket, stones]) => {
+      return <Pocket pocket={pocket} stones={stones} key={pocket.toString()}/>
+    })
+
     return (
-      <div>
-        <Pocket boardPosition="A0" />
-        <Pocket boardPosition="A1" />
-        <Pocket boardPosition="A2" />
-        <Pocket boardPosition="A3" />
-        <Pocket boardPosition="A4" />
-        <Pocket boardPosition="A5" />
-        <Pocket boardPosition="AM" />
-        <Pocket boardPosition="B0" />
-        <Pocket boardPosition="B1" />
-        <Pocket boardPosition="B2" />
-        <Pocket boardPosition="B3" />
-        <Pocket boardPosition="B4" />
-        <Pocket boardPosition="B5" />
-        <Pocket boardPosition="BM" />
-      </div>
+      <Fragment>
+        {boardJsx}
+      </Fragment>
     )
   }
 }
 
 class Game extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      game: this.props.game,
-      id: this.props.id
-    }
-    console.log('this.props: ', this.props)
-  }
-
   render () {
     return (
       <div>
-        <GameInfo game={this.props.game} id={this.props.id} />
-        <Board />
+        <GameInfo id={this.props.id} />
+        <Board board={this.props.game.board} />
       </div>
     )
   }
