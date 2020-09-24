@@ -4,14 +4,14 @@ import React, { Component, Fragment } from 'react'
 
 import { gameCreate } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
-import { Game } from 'mancala'
+import mancala from 'mancala'
 // import GameBoard from './GameBoard'
 
 class GameCreate extends Component {
   constructor () {
     super()
     this.state = {
-      game: new Game({}),
+      game: new mancala.Game({}),
       id: null
     }
   }
@@ -22,7 +22,7 @@ class GameCreate extends Component {
       .then(res => {
         // take the ID that was created and set it to the game
         this.setState({
-          game: Game.fromJSON(res.data.game),
+          game: mancala.Game.fromJSON(res.data.game),
           id: res.data.game.id
         })
       })

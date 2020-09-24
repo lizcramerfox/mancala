@@ -14,7 +14,9 @@ class GameInfo extends Component {
 
 class Pocket extends Component {
   onClick = () => {
-    this.props.playTurn(this.props.pocket.index)
+    if (!this.props.pocket.isMancala) {
+      return this.props.playTurn(this.props.pocket.index)
+    }
   }
 
   render () {
@@ -59,13 +61,13 @@ class Board extends Component {
     const mancalaA = entriesArray
       .filter(([pocket, stones]) => pocket.player === "A" && pocket.isMancala === true)
       .map(([pocket, stones]) => {
-        return <Pocket playTurn={this.props.playTurn} pocket={pocket} stones={stones} key={pocket.toString()}/>
+        return <Pocket pocket={pocket} stones={stones} key={pocket.toString()}/>
       })
 
     const mancalaB = entriesArray
       .filter(([pocket, stones]) => pocket.player === "B" && pocket.isMancala === true)
       .map(([pocket, stones]) => {
-        return <Pocket playTurn={this.props.playTurn} pocket={pocket} stones={stones} key={pocket.toString()}/>
+        return <Pocket pocket={pocket} stones={stones} key={pocket.toString()}/>
       })
 
     return (
