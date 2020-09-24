@@ -15,7 +15,7 @@ class GameInfo extends Component {
 class Pocket extends Component {
   onClick = () => {
     if (!this.props.pocket.isMancala) {
-      return this.props.playTurn(this.props.pocket.index)
+      return this.props.playTurn(this.props.pocket.index, this.props.pocket.player)
     }
   }
 
@@ -90,13 +90,18 @@ class Game extends Component {
     }
   }
 
-  playTurn = (index) => {
-    this.setState((state) => {
-      return { game: state.game.playTurn(index) }
-    })
+  playTurn = (index, player) => {
+    if (player === this.state.game.currentPlayer) {
+      this.setState((state) => {
+        return { game: state.game.playTurn(index) }
+      })
+    }
   }
 
   render () {
+    // console.log(`this.props.pocket = `, this.props.pocket)
+    console.log(`this.state.game.currentPlayer  = `, this.state.game.currentPlayer)
+
     return (
       <div>
         <GameInfo id={this.props.id} />
