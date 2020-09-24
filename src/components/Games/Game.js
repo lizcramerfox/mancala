@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from 'react'
+// import '../../index.scss'
+import '../../CSS/gameboard.module.scss'
 
 class GameInfo extends Component {
   render () {
@@ -46,6 +48,7 @@ class Board extends Component {
       .map(([pocket, stones]) => {
         return <Pocket pocket={pocket} stones={stones} key={pocket.toString()}/>
       })
+      .reverse()
 
     const mancalaA = entriesArray
       .filter(([pocket, stones]) => pocket.player === "A" && pocket.isMancala === true)
@@ -60,12 +63,12 @@ class Board extends Component {
       })
 
     return (
-      <Fragment>
-        <div>Pockets-A: {pocketsA}</div>
-        <div>Pockets-B: {pocketsB}</div>
-        <div>Mancala-A: {mancalaA}</div>
-        <div>Mancala-B: {mancalaB}</div>
-      </Fragment>
+      <div className="gameboard">
+        <Fragment>{mancalaB}</Fragment>
+        <Fragment>{pocketsB}</Fragment>
+        <Fragment>{pocketsA}</Fragment>
+        <Fragment>{mancalaA}</Fragment>
+      </div>
     )
   }
 }
