@@ -13,6 +13,10 @@ class GameInfo extends Component {
 }
 
 class Pocket extends Component {
+  onClick = () => {
+    this.props.playTurn(this.props.pocket.index)
+  }
+
   render () {
     const { pocket, stones } = this.props
     const { player, isMancala } = pocket
@@ -21,12 +25,14 @@ class Pocket extends Component {
     const type = isMancala ? `mancala` : `non-mancala`
     const pocketID = `pocket-${pocket.toString()}`
 
-    const classes = [playerClass, type].join(' ')
+    const classes = [playerClass, type, 'pocket'].join(' ')
 
 
     return (
       <Fragment>
-        <div className={classes} id={pocketID} player={player} type={type}>{pocket.toString()} : {stones}</div>
+        <div onClick={this.onClick} className={classes} id={pocketID} player={player} type={type}>
+          {pocket.toString()} : {stones}
+        </div>
       </Fragment>
     )
   }
@@ -40,26 +46,26 @@ class Board extends Component {
     const pocketsA = entriesArray
       .filter(([pocket, stones]) => pocket.player === "A" && pocket.isMancala === false)
       .map(([pocket, stones]) => {
-        return <Pocket pocket={pocket} stones={stones} key={pocket.toString()}/>
+        return <Pocket playTurn={this.props.playTurn} pocket={pocket} stones={stones} key={pocket.toString()}/>
       })
 
     const pocketsB = entriesArray
       .filter(([pocket, stones]) => pocket.player === "B" && pocket.isMancala === false)
       .map(([pocket, stones]) => {
-        return <Pocket pocket={pocket} stones={stones} key={pocket.toString()}/>
+        return <Pocket playTurn={this.props.playTurn} pocket={pocket} stones={stones} key={pocket.toString()}/>
       })
       .reverse()
 
     const mancalaA = entriesArray
       .filter(([pocket, stones]) => pocket.player === "A" && pocket.isMancala === true)
       .map(([pocket, stones]) => {
-        return <Pocket pocket={pocket} stones={stones} key={pocket.toString()}/>
+        return <Pocket playTurn={this.props.playTurn} pocket={pocket} stones={stones} key={pocket.toString()}/>
       })
 
     const mancalaB = entriesArray
       .filter(([pocket, stones]) => pocket.player === "B" && pocket.isMancala === true)
       .map(([pocket, stones]) => {
-        return <Pocket pocket={pocket} stones={stones} key={pocket.toString()}/>
+        return <Pocket playTurn={this.props.playTurn} pocket={pocket} stones={stones} key={pocket.toString()}/>
       })
 
     return (
@@ -74,11 +80,25 @@ class Board extends Component {
 }
 
 class Game extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      game: props.game
+    }
+  }
+
+  playTurn = (index) => {
+    this.setState((state) => {
+      return { game: state.game.playTurn(index) }
+    })
+  }
+
   render () {
     return (
       <div>
         <GameInfo id={this.props.id} />
-        <Board board={this.props.game.board} />
+        <Board playTurn={this.playTurn} board={this.state.game.board} />
       </div>
     )
   }

@@ -1,5 +1,5 @@
 $black: #000;
-$gray-light: #e0ebeb;
+$background-mancala: #e0ebeb;
 $background-a: #ff9;
 $background-b: #9f9;
 
@@ -10,6 +10,13 @@ $background-b: #9f9;
   grid-row-gap: 5px;
   grid-template-columns: repeat(8, 100fr);
   grid-template-rows: repeat(2, 100fr);
+  padding: 5px;
+}
+
+.pocket {
+  align-self: center;
+  display: flex;
+  justify-content: center;
 }
 
 .player-a {
@@ -21,7 +28,7 @@ $background-b: #9f9;
 }
 
 .mancala {
-  background-color: $gray-light
+  background-color: $background-mancala;
 }
 
 #pocket-AM {
