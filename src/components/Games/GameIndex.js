@@ -24,13 +24,6 @@ class GameIndex extends Component {
           user: this.props.user
         })
       })
-      .then(() => {
-        msgAlert({
-          heading: 'Index All Games Success',
-          variant: 'success',
-          message: messages.gameIndexSuccess
-        })
-      })
       .catch(() => {
         msgAlert({
           heading: 'Index All Games Failed',
