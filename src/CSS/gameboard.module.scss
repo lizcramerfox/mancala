@@ -2,6 +2,7 @@ $black: #000;
 $background-mancala: #e0ebeb;
 $background-a: #ff9;
 $background-b: #9f9;
+$delete-button: #ff8375;
 
 .gameboard {
   border: 1px solid $black;
@@ -29,6 +30,12 @@ $background-b: #9f9;
 
 .mancala {
   background-color: $background-mancala;
+}
+
+.button {
+  background-color: $delete-button;
+  border: 1px solid $black;
+  height: 4rem
 }
 
 #pocket-AM {

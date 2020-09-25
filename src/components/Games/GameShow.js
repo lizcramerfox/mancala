@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 // import { Button } from 'react-bootstrap'
-import { gameShow /*, gameDestroy, gameUpdate */} from '../../api/game'
+import { gameShow /* gameUpdate */} from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
 // import { Redirect } from 'react-router-dom'
 import Game from './GameBoard/Game'
 import Mancala from 'mancala'
 
 class GameShow extends Component {
-
   constructor (props) {
     super(props)
 
@@ -15,6 +14,7 @@ class GameShow extends Component {
       game: null,
       id: null
     }
+    console.log(`in GameShow, this.props.user = `, this.props.user)
   }
 
   componentDidMount () {
@@ -24,8 +24,10 @@ class GameShow extends Component {
       .then(res => {
         this.setState({
           game: Mancala.Game.fromJSON(res.data.game),
-          id: res.data.game.id
+          id: res.data.game.id,
+          user: user
         })
+        console.log(user)
       })
       .then(() => {
         msgAlert({
@@ -43,59 +45,13 @@ class GameShow extends Component {
       })
   }
 
-  // deleteGame = () => {
-  //   const { msgAlert, user, id } = this.props
-  //
-  //   gameDestroy(user, id, this.state.game)
-  //     .then(() => {
-  //       msgAlert({
-  //         heading: 'Delete Game Success',
-  //         variant: 'success',
-  //         message: messages.gameDeleteSuccess
-  //       })
-  //     })
-  //     .catch(() => {
-  //       msgAlert({
-  //         heading: 'Delete Game Failed',
-  //         variant: 'danger',
-  //         message: messages.gameDeleteFailure
-  //       })
-  //     })
-  //   console.log(this.state.game)
-  // }
-  //
-  // continueGame = () => {
-  //   const { msgAlert, user, id } = this.props
-  //
-  //   gameUpdate(user, id)
-  //     .then((res) => {
-  //       this.setState({ game: res.data.game })
-  //     })
-  //     .then(() => {
-  //       msgAlert({
-  //         heading: 'Continue Game Success',
-  //         variant: 'success',
-  //         message: messages.gameUpdateSuccess
-  //       })
-  //     })
-  //     .catch(() => {
-  //       msgAlert({
-  //         heading: 'Continue Game Failed',
-  //         variant: 'danger',
-  //         message: messages.gameUpdateFailure
-  //       })
-  //     })
-  // }
-
   render () {
     if (!this.state.game) {
       return <p>"GameShow loading..."</p>
     }
 
-
-
     const gameJsx = (
-      <Game game={this.state.game} id={this.state.id} />
+      <Game game={this.state.game} id={this.state.id} user={this.state.user} msgAlert={this.props.msgAlert}/>
     )
 
     return (

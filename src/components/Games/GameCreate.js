@@ -46,7 +46,7 @@ class GameCreate extends Component {
 
     return (
       <div>
-          <Game game={this.state.game} id={this.state.id} />
+        <Game game={this.state.game} id={this.state.id} user={this.props.user} />
       </div>
     )
   }

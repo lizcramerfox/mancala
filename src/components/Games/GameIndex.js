@@ -11,13 +11,18 @@ class GameIndex extends Component {
     this.state = {
       games: []
     }
+
+    console.log(`in GameIndex, this.props = `, this.props)
   }
 
   componentDidMount () {
     const { msgAlert } = this.props
     gameIndex(this.props.user)
       .then(res => {
-        this.setState({ games: res.data.games })
+        this.setState({
+          games: res.data.games,
+          user: this.props.user
+        })
       })
       .then(() => {
         msgAlert({
