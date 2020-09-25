@@ -3,6 +3,7 @@ import '../../../CSS/gameboard.module.scss'
 
 class GameInfo extends Component {
   render () {
+    console.log(this.props)
     return (
       <Fragment>
         <h4>Game ID: {this.props.id}</h4>

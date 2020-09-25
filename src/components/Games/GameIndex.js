@@ -11,8 +11,6 @@ class GameIndex extends Component {
     this.state = {
       games: []
     }
-
-    console.log(`in GameIndex, this.props = `, this.props)
   }
 
   componentDidMount () {

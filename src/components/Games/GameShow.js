@@ -11,9 +11,9 @@ class GameShow extends Component {
 
     this.state = {
       game: null,
-      id: null
+      id: null,
+      user: null
     }
-    console.log(`in GameShow, this.props.user = `, this.props.user)
   }
 
   componentDidMount () {
@@ -25,14 +25,6 @@ class GameShow extends Component {
           game: Mancala.Game.fromJSON(res.data.game),
           id: res.data.game.id,
           user: user
-        })
-        console.log(user)
-      })
-      .then(() => {
-        msgAlert({
-          heading: 'Show Game Success',
-          variant: 'success',
-          message: messages.gameShowSuccess
         })
       })
       .catch(() => {

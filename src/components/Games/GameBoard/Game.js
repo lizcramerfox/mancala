@@ -23,9 +23,8 @@ class Game extends Component {
     }
 
     this.setState((state) => {
-      const updatedGame = state.game.playTurn(index)
-
       const { msgAlert, user, id} = this.props
+      const updatedGame = state.game.playTurn(index)
 
       gameUpdate(user, updatedGame.toJSON(), id)
         .catch(() => {
