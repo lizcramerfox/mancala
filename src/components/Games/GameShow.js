@@ -38,7 +38,7 @@ class GameShow extends Component {
 
   render () {
     if (!this.state.game) {
-      return <p>"GameShow loading..."</p>
+      return <p>"Loading..."</p>
     }
 
     const gameJsx = (
