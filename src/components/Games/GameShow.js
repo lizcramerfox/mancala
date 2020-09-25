@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 // import { Button } from 'react-bootstrap'
-import { gameShow /* gameUpdate */} from '../../api/game'
+import { gameShow } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
-// import { Redirect } from 'react-router-dom'
 import Game from './GameBoard/Game'
 import Mancala from 'mancala'
 
