@@ -1,11 +1,11 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 // import { Button } from 'react-bootstrap'
 // import { Redirect } from 'react-router-dom'
 
 import { gameCreate } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
 import mancala from 'mancala'
-// import GameBoard from './GameBoard'
+import Game from './GameBoard/Game'
 
 class GameCreate extends Component {
   constructor () {
@@ -43,12 +43,11 @@ class GameCreate extends Component {
   }
 
   render () {
+
     return (
-      <Fragment>
-        <div>
-          <h5>Game ID: {this.state.id}</h5>
-        </div>
-      </Fragment>
+      <div>
+          <Game game={this.state.game} id={this.state.id} />
+      </div>
     )
   }
 }

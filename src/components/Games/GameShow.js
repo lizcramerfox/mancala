@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { gameShow /*, gameDestroy, gameUpdate */} from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
 // import { Redirect } from 'react-router-dom'
-import Game from './Game'
+import Game from './GameBoard/Game'
 import Mancala from 'mancala'
 
 class GameShow extends Component {
@@ -88,13 +88,13 @@ class GameShow extends Component {
   // }
 
   render () {
-    let gameJsx
-
     if (!this.state.game) {
       return <p>"GameShow loading..."</p>
     }
 
-    gameJsx = (
+
+
+    const gameJsx = (
       <Game game={this.state.game} id={this.state.id} />
     )
 
