@@ -45,7 +45,7 @@ class Delete extends Component {
     }
 
     return (
-      <div className="button" onClick={this.deleteGame} msgAlert={this.props.msgAlert}>
+      <div className="button" onClick={this.deleteGame}>
         <p>Delete Game</p>
       </div>
     )

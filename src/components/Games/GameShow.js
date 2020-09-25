@@ -42,7 +42,13 @@ class GameShow extends Component {
     }
 
     const gameJsx = (
-      <Game game={this.state.game} id={this.state.id} user={this.state.user} msgAlert={this.props.msgAlert}/>
+      <Game
+        game={this.state.game}
+        id={this.state.id}
+        user={this.state.user} 
+        msgAlert={this.props.msgAlert}
+        currentPlayer={this.state.currentPlayer}
+      />
     )
 
     return (

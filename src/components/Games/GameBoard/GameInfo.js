@@ -1,13 +1,12 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import '../../../CSS/gameboard.module.scss'
 
 class GameInfo extends Component {
   render () {
-    console.log(this.props)
     return (
-      <Fragment>
-        <h4>Game ID: {this.props.id}</h4>
-      </Fragment>
+      <div>
+        <h4>Player {this.props.currentPlayer}'s Turn</h4>
+      </div>
     )
   }
 }

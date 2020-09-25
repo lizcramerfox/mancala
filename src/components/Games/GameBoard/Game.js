@@ -44,7 +44,7 @@ class Game extends Component {
   render () {
     return (
       <div>
-        <GameInfo id={this.props.id} />
+        <GameInfo id={this.props.id} currentPlayer={this.state.game.currentPlayer}/>
         <Board playTurn={this.playTurn} board={this.state.game.board} />
         <GameDelete id={this.props.id} user={this.props.user} msgAlert={this.props.msgAlert}/>
       </div>
