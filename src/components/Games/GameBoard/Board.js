@@ -1,10 +1,15 @@
 import React, { Component, Fragment } from 'react'
-import '../../../CSS/gameboard.module.scss'
+import './gameboard.module.scss'
 import Pocket from './Pocket'
 
 class Board extends Component {
-  render () {
-    const entriesArray = Array.from(this.props.board.pockets.entries())
+  render() {
+    const entriesArray = Array.from(this.props.game.board.pockets.entries())
+
+    // let classNames = [playerClass, type, 'pocket']
+    // const classes = classNames.join(' ')
+    //
+    //
 
     const pocketsA = entriesArray
       .filter(([pocket, stones]) => pocket.player === "A" && pocket.isMancala === false)
@@ -30,8 +35,6 @@ class Board extends Component {
       .map(([pocket, stones]) => {
         return <Pocket pocket={pocket} stones={stones} key={pocket.toString()} />
       })
-
-    console.log(this.props)
 
     return (
       <div className="gameboard">

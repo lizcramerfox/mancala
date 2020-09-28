@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { gameUpdate } from '../../../api/game'
 import messages from '../../AutoDismissAlert/messages'
 
-import '../../../CSS/gameboard.module.scss'
+import './gameboard.module.scss'
 import Board from './Board'
 import GameInfo from './GameInfo'
 import GameDelete from '../GameDelete'
@@ -49,7 +49,7 @@ class Game extends Component {
           id={id}
           game={this.state.game}
         />
-        <Board playTurn={this.playTurn} board={this.state.game.board} />
+        <Board playTurn={this.playTurn} game={this.state.game} />
         <GameDelete id={id} user={user} msgAlert={msgAlert}/>
       </div>
     )

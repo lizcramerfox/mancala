@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../../../CSS/gameboard.module.scss'
+import './gameboard.module.scss'
 
 class Pocket extends Component {
   onClick = () => {
