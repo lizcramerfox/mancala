@@ -39,14 +39,18 @@ class Game extends Component {
     })
   }
 
-
-
   render () {
+    console.log(`props.game.board = `, this.props.game.board)
+    const { id, user, msgAlert } = this.props
+
     return (
       <div>
-        <GameInfo id={this.props.id} currentPlayer={this.state.game.currentPlayer}/>
+        <GameInfo
+          id={id}
+          game={this.state.game}
+        />
         <Board playTurn={this.playTurn} board={this.state.game.board} />
-        <GameDelete id={this.props.id} user={this.props.user} msgAlert={this.props.msgAlert}/>
+        <GameDelete id={id} user={user} msgAlert={msgAlert}/>
       </div>
     )
   }

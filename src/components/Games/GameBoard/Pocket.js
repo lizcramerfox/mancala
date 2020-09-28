@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import '../../../CSS/gameboard.module.scss'
 
 class Pocket extends Component {
@@ -9,22 +9,28 @@ class Pocket extends Component {
   }
 
   render () {
+
     const { pocket, stones } = this.props
     const { player, isMancala } = pocket
 
     const playerClass = `player-${player.toLowerCase()}`
     const type = isMancala ? `mancala` : `non-mancala`
-    const pocketID = `pocket-${pocket.toString()}`
+    const pocketID = `${pocket.toString()}`
 
-    const classes = [playerClass, type, 'pocket'].join(' ')
-
+    let classNames = [playerClass, type, 'pocket']
+    const classes = classNames.join(' ')
 
     return (
-      <Fragment>
-        <div onClick={this.onClick} className={classes} id={pocketID} player={player} type={type}>
+        <div
+          onClick={this.onClick}
+          className={classes}
+          id={pocketID}
+          player={player}
+          type={type}
+          pocket={this.props.pocket}
+        >
           {pocket.toString()} : {stones}
         </div>
-      </Fragment>
     )
   }
 }
