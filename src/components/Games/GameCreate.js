@@ -1,29 +1,32 @@
 import React, { Component } from 'react'
 // import { Button } from 'react-bootstrap'
-// import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 import { gameCreate } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
 import mancala from 'mancala'
-import Game from './GameBoard/Game'
+// import Game from './GameBoard/Game'
 
 class GameCreate extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
       game: new mancala.Game({}),
-      id: null
+      id: null,
+      created: false,
     }
   }
 
   componentDidMount() {
     const { msgAlert, user } = this.props
+
     gameCreate(user, this.state.game.toJSON())
       .then(res => {
         // take the ID that was created and set it to the game
         this.setState({
           game: mancala.Game.fromJSON(res.data.game),
-          id: res.data.game.id
+          id: res.data.game.id,
+          created: true
         })
       })
       .then(() => {
@@ -43,12 +46,10 @@ class GameCreate extends Component {
   }
 
   render () {
-
-    return (
-      <div>
-        <Game game={this.state.game} id={this.state.id} user={this.props.user} msgAlert={this.props.msgAlert}/>
-      </div>
-    )
+    if (!this.state.created) {
+      return <p>Oops! Something went wrong.</p>
+    }
+    return <Redirect to={`/games/${this.state.id}`} />
   }
 }
 
