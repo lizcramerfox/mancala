@@ -29,19 +29,26 @@ class AutoDismissAlert extends React.Component {
 
   render () {
     const { variant, heading, message } = this.props
-    return (
-      <ReactModal
-        isOpen={this.state.showModal}
-        handleClose={this.handleClose}
-        contentLabel={'Alert'}
-        className={['alert', variant].join(' ')}
-      >
+
+    const alertJsx = (
+      <div onClick={this.handleClose}>
         <div className="alert-heading">
           {heading}
         </div>
-        <div>
-          <p className="alert-body">{message}</p>
+        <div className="alert-message">
+          {message}
         </div>
+      </div>
+    )
+
+    return (
+      <ReactModal
+        isOpen={this.state.showModal}
+        onRequestClose={this.handleClose}
+        shouldCloseOnOverlayClick={true}
+        className={['alert', variant].join(' ')}
+      >
+        {alertJsx}
       </ReactModal>
     )
   }

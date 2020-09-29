@@ -24,7 +24,9 @@ class GameInfo extends Component {
     }
 
     return (
-      <h4>Player {this.props.game.currentPlayer}'s Turn</h4>
+      <div className="game-info">
+        <h4>Player {this.props.game.currentPlayer}'s Turn</h4>
+      </div>
     )
   }
 }
