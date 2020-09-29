@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { gameUpdate } from '../../../api/game'
 import messages from '../../AutoDismissAlert/messages'
 
+
 import './gameboard.module.scss'
 import Board from './Board'
 import GameInfo from './GameInfo'
@@ -40,7 +41,6 @@ class Game extends Component {
   }
 
   render () {
-    console.log(`props.game.board = `, this.props.game.board)
     const { id, user, msgAlert } = this.props
 
     return (
@@ -50,7 +50,7 @@ class Game extends Component {
           game={this.state.game}
         />
         <Board playTurn={this.playTurn} game={this.state.game} />
-        <GameDelete id={id} user={user} msgAlert={msgAlert}/>
+        <GameDelete id={id} user={user} msgAlert={msgAlert} />
       </div>
     )
   }

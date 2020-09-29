@@ -6,11 +6,6 @@ class Board extends Component {
   render() {
     const entriesArray = Array.from(this.props.game.board.pockets.entries())
 
-    // let classNames = [playerClass, type, 'pocket']
-    // const classes = classNames.join(' ')
-    //
-    //
-
     const pocketsA = entriesArray
       .filter(([pocket, stones]) => pocket.player === "A" && pocket.isMancala === false)
       .map(([pocket, stones]) => {

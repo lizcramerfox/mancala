@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+import ReactModal from 'react-modal'
 import { gameDestroy } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
 
@@ -9,8 +10,17 @@ class Delete extends Component {
     super()
 
     this.state = {
+      showModal: false,
       deleted: false
     }
+  }
+
+  showModal = () => {
+    this.setState({ showModal: true })
+  }
+
+  cancelDelete = () => {
+    this.setState({ showModal: false})
   }
 
   deleteGame = () => {
@@ -44,8 +54,21 @@ class Delete extends Component {
       return <Redirect to={`/games`} />
     }
 
+    if (this.state.showModal) {
+      return (
+        <ReactModal
+          isOpen={true}
+          shouldCloseOnEsc={true}
+        >
+          <p>Are you sure you want to delete this game?</p>
+          <button onClick={this.cancelDelete}>Cancel</button>
+          <button onClick={this.deleteGame}>Delete</button>
+        </ReactModal>
+      )
+    }
+
     return (
-      <div className="button" onClick={this.deleteGame}>
+      <div className="button" onClick={this.showModal}>
         <p>Delete Game</p>
       </div>
     )

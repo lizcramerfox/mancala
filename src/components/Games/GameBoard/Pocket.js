@@ -17,13 +17,12 @@ class Pocket extends Component {
     const type = isMancala ? `mancala` : `non-mancala`
     const pocketID = `${pocket.toString()}`
 
-    let classNames = [playerClass, type, 'pocket']
-    const classes = classNames.join(' ')
+    let classNames = [playerClass, type, 'pocket'].join(' ')
 
     return (
         <div
           onClick={this.onClick}
-          className={classes}
+          className={classNames}
           id={pocketID}
           player={player}
           type={type}
