@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 import ReactModal from 'react-modal'
 import { gameDestroy } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
+import '../AutoDismissAlert/AutoDismissAlert.scss'
 
 
 class Delete extends Component {
@@ -59,10 +60,20 @@ class Delete extends Component {
         <ReactModal
           isOpen={true}
           shouldCloseOnEsc={true}
+          className={"alert warning"}
         >
-          <p>Are you sure you want to delete this game?</p>
-          <button onClick={this.cancelDelete}>Cancel</button>
-          <button onClick={this.deleteGame}>Delete</button>
+        <div>
+          <div className="alert-heading">
+            Confirm Delete
+          </div>
+          <div className="alert-message">
+            Are you sure you want to delete this game?
+          </div>
+          <div>
+            <button onClick={this.cancelDelete}>Cancel</button>
+            <button onClick={this.deleteGame}>Delete</button>
+          </div>
+        </div>
         </ReactModal>
       )
     }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
 import { gameIndex } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
+import './games.scss'
 
 class GameIndex extends Component {
   constructor (props) {
@@ -35,19 +35,19 @@ class GameIndex extends Component {
     const { games } = this.state
 
     if (games.length < 1) {
-      return (<h3>Nothing to view - Click "Start a New Game".</h3>)
+      return (<h3>No Saved Games - Click "Start a New Game".</h3>)
     }
 
     const gamesJsx = games.map(game => (
       <li key={game.id}>
         <Link to={`/games/${game.id}`}>
-          <Button>Game {game.id}</Button>
+          <button>Game {game.id}</button>
         </Link>
       </li>
     ))
 
     return (
-      <div>
+      <div className="index">
         <ul>
           {gamesJsx}
         </ul>

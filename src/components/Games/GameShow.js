@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import { Button } from 'react-bootstrap'
 import { gameShow } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
 import Game from './GameBoard/Game'

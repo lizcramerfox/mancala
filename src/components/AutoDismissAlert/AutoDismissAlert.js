@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import ReactModal from 'react-modal'
-
 import './AutoDismissAlert.scss'
 
 class AutoDismissAlert extends Component {
@@ -18,7 +17,7 @@ class AutoDismissAlert extends Component {
   componentDidMount () {
     this.timer = setTimeout(() => {
       this.setState({ showModal: false })
-    }, 20000)
+    }, 3000)
   }
 
   componentWillUnmount () {
