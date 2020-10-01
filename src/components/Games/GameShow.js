@@ -29,7 +29,7 @@ class GameShow extends Component {
       })
       .catch(() => {
         msgAlert({
-          heading: 'Show Game Failed',
+          heading: 'Failure',
           variant: 'danger',
           message: messages.gameShowFailure
         })
@@ -45,7 +45,7 @@ class GameShow extends Component {
       <Game
         game={this.state.game}
         id={this.state.id}
-        user={this.state.user} 
+        user={this.state.user}
         msgAlert={this.props.msgAlert}
         currentPlayer={this.state.currentPlayer}
       />

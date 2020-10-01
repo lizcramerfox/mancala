@@ -12,6 +12,6 @@ export default {
   gameShowFailure: 'Failed to display your game.',
   gameIndexSuccess: 'All games successfuly displayed.',
   gameIndexFailure: 'Failed to load all games for display.',
-  gameDestroySuccess: 'Your game has been deleted.',
-  gameDestroyFailure: 'Failed to delete game.'
+  gameDeleteSuccess: 'Your game has been deleted.',
+  gameDeleteFailure: 'Failed to delete game.'
 }

@@ -1,37 +1,35 @@
-import React from 'react'
-// import Alert from 'react-bootstrap/Alert'
+import React, { Component } from 'react'
 import ReactModal from 'react-modal'
 
 import './AutoDismissAlert.scss'
 
-class AutoDismissAlert extends React.Component {
+class AutoDismissAlert extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
       showModal: true
     }
-
-    this.handleClose = this.handleClose.bind(this)
   }
 
+  handleClose = () => {
+    this.setState({ show: false })
+  }
   componentDidMount () {
-    this.timer = setInterval(() => {
+    this.timer = setTimeout(() => {
       this.setState({ showModal: false })
-    }, 5000)
+    }, 20000)
   }
 
   componentWillUnmount () {
-    clearInterval(this.timer)
+    clearTimeout(this.timer)
   }
-
-  handleClose = () => this.setState({ show: false })
 
   render () {
     const { variant, heading, message } = this.props
 
     const alertJsx = (
-      <div onClick={this.handleClose}>
+      <div>
         <div className="alert-heading">
           {heading}
         </div>
@@ -41,16 +39,22 @@ class AutoDismissAlert extends React.Component {
       </div>
     )
 
-    return (
-      <ReactModal
-        isOpen={this.state.showModal}
-        onRequestClose={this.handleClose}
-        shouldCloseOnOverlayClick={true}
-        className={['alert', variant].join(' ')}
-      >
-        {alertJsx}
-      </ReactModal>
-    )
+    if (this.state.showModal) {
+      return (
+        <ReactModal
+          ariaHideApp
+          shouldCloseOnOverlayClick
+          shouldCloseOnEsc
+          onRequestClose={this.handleClose}
+          isOpen={this.state.showModal}
+          className={['alert', variant].join(' ')}
+
+        >
+          {alertJsx}
+        </ReactModal>
+      )
+    }
+    return null
   }
 }
 

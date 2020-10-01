@@ -24,7 +24,7 @@ class GameIndex extends Component {
       })
       .catch(() => {
         msgAlert({
-          heading: 'Index All Games Failed',
+          heading: 'Failure',
           variant: 'danger',
           message: messages.gamesIndexFailure
         })

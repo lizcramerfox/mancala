@@ -32,14 +32,14 @@ class GameCreate extends Component {
       .then(console.log(`in componentDidMount`))
       .then(() => {
         msgAlert({
-          heading: 'New Game Success',
+          heading: 'Success',
           variant: 'success',
           message: messages.gameCreateSuccess
         })
       })
       .catch(() => {
         msgAlert({
-          heading: 'New Game Failure',
+          heading: 'Failure',
           variant: 'danger',
           message: messages.gameCreateFailure
         })

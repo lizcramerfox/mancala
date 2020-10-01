@@ -34,14 +34,14 @@ class Delete extends Component {
       })
       .then(() => {
         msgAlert({
-          heading: 'Delete Game Success',
+          heading: 'Success',
           variant: 'success',
           message: messages.gameDeleteSuccess
         })
       })
       .catch(() => {
         msgAlert({
-          heading: 'Delete Game Failed',
+          heading: 'Failure',
           variant: 'danger',
           message: messages.gameDeleteFailure
         })
