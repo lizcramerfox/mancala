@@ -1,3 +1,11 @@
+$success-background: #cef1c3;
+$success-text: #2c6919;
+$warning-background: #efdca2;
+$warning-text: #51400e;
+$failure-background: #efb5a2;
+$failure-text: #511e0e;
+
+
 .alert {
   align-items: center;
   animation: .5s ease-in-out 0s 1 light-bounce-in;
@@ -10,9 +18,34 @@
   right: 0;
   z-index: 10000;
 
-  .alert-body {
-    margin-bottom: 0;
+  .alert-heading {
+    padding: 2rem;
+    font-weight: bold;
+    text-align: center;
+    display: block;
   }
+
+  .alert-body {
+    padding: 2rem;
+    margin-bottom: 0;
+    text-align: center;
+    display: block;
+  }
+}
+
+.success {
+  background-color: $success-background;
+  color: $success-text;
+}
+
+.warning {
+  background-color: $warning-background;
+  color: $warning-text;
+}
+
+.failure {
+  background-color: $failure-background;
+  color: $failure-text;
 }
 
 .close {

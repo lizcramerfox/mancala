@@ -1,5 +1,6 @@
 import React from 'react'
-import Alert from 'react-bootstrap/Alert'
+// import Alert from 'react-bootstrap/Alert'
+import ReactModal from 'react-modal'
 
 import './AutoDismissAlert.scss'
 
@@ -8,13 +9,15 @@ class AutoDismissAlert extends React.Component {
     super(props)
 
     this.state = {
-      show: true
+      showModal: true
     }
+
+    this.handleClose = this.handleClose.bind(this)
   }
 
   componentDidMount () {
     this.timer = setInterval(() => {
-      this.setState({ show: false })
+      this.setState({ showModal: false })
     }, 5000)
   }
 
@@ -27,19 +30,19 @@ class AutoDismissAlert extends React.Component {
   render () {
     const { variant, heading, message } = this.props
     return (
-      <Alert
-        dismissible
-        show={this.state.show}
-        variant={variant}
-        onClose={this.handleClose}
+      <ReactModal
+        isOpen={this.state.showModal}
+        handleClose={this.handleClose}
+        contentLabel={'Alert'}
+        className={['alert', variant].join(' ')}
       >
-        <div className="container">
-          <Alert.Heading>
-            {heading}
-          </Alert.Heading>
+        <div className="alert-heading">
+          {heading}
+        </div>
+        <div>
           <p className="alert-body">{message}</p>
         </div>
-      </Alert>
+      </ReactModal>
     )
   }
 }

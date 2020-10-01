@@ -34,9 +34,14 @@ $delete-button: #ff8375;
 
 .button {
   background-color: $delete-button;
-  border: 1px solid $black;
-  height: 4rem;
+  text-align: center;
+  margin: 1rem auto;
+  padding: .5rem;
   width: 8rem;
+
+  p {
+    margin: 0;
+  }
 }
 
 #AM {
