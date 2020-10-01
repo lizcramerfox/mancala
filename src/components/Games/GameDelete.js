@@ -70,8 +70,8 @@ class Delete extends Component {
             Are you sure you want to delete this game?
           </div>
           <div>
-            <button onClick={this.cancelDelete}>Cancel</button>
-            <button onClick={this.deleteGame}>Delete</button>
+            <button className="success" onClick={this.cancelDelete}>Cancel</button>
+            <button className="failure" onClick={this.deleteGame}>Delete</button>
           </div>
         </div>
         </ReactModal>
@@ -79,8 +79,8 @@ class Delete extends Component {
     }
 
     return (
-      <div className="button" onClick={this.showModal}>
-        <p>Delete Game</p>
+      <div onClick={this.showModal}>
+        <button className="delete-button">Delete Game</button>
       </div>
     )
   }

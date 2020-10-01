@@ -5,6 +5,11 @@ $warning-text: #51400e;
 $failure-background: #efb5a2;
 $failure-text: #511e0e;
 
+button {
+  font-size: 1rem;
+  padding: .5rem 0;
+  width: 45%;
+}
 
 .alert {
   align-items: center;

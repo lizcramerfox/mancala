@@ -5,13 +5,13 @@ $background-b: #9f9;
 $delete-button: #ff8375;
 
 .gameboard {
-  border: 1px solid $black;
+  // border: 1px solid $black;
   display: grid;
   grid-column-gap: 5px;
   grid-row-gap: 5px;
   grid-template-columns: repeat(8, 100fr);
   grid-template-rows: repeat(2, 100fr);
-  padding: 5px;
+  padding: .5rem;
 }
 
 .pocket {
@@ -32,16 +32,10 @@ $delete-button: #ff8375;
   background-color: $background-mancala;
 }
 
-.button {
-  background-color: $delete-button;
+.game-info {
+  margin: 0 auto;
+  padding: 2rem 0;
   text-align: center;
-  margin: 1rem auto;
-  padding: .5rem;
-  width: 8rem;
-
-  p {
-    margin: 0;
-  }
 }
 
 #AM {
