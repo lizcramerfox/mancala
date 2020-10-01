@@ -58,9 +58,12 @@ class Delete extends Component {
     if (this.state.showModal) {
       return (
         <ReactModal
+          ariaHideApp={true}
           isOpen={true}
           shouldCloseOnEsc={true}
-          className={"alert warning"}
+          shouldCloseOnOverlayClick={true}
+          onRequestClose={this.cancelDelete}
+          className={"alert"}
         >
         <div>
           <div className="alert-heading">

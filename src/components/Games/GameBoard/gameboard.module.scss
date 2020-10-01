@@ -42,6 +42,7 @@ $background-b: #9f9;
 .mancala {
   background-color: $background-mancala;
   cursor: default;
+  height: 100%;
 
   &:active {
     top: 0;

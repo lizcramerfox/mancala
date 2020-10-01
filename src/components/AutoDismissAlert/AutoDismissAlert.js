@@ -12,12 +12,11 @@ class AutoDismissAlert extends Component {
   }
 
   handleClose = () => {
-    this.setState({ show: false })
+    this.setState({ showModal: false })
   }
+
   componentDidMount () {
-    this.timer = setTimeout(() => {
-      this.setState({ showModal: false })
-    }, 3000)
+    this.timer = setTimeout(this.handleClose, 5000)
   }
 
   componentWillUnmount () {
@@ -41,13 +40,12 @@ class AutoDismissAlert extends Component {
     if (this.state.showModal) {
       return (
         <ReactModal
-          ariaHideApp
-          shouldCloseOnOverlayClick
-          shouldCloseOnEsc
+          ariaHideApp={true}
+          shouldCloseOnOverlayClick={true}
+          shouldCloseOnEsc={true}
           onRequestClose={this.handleClose}
           isOpen={this.state.showModal}
           className={['alert', variant].join(' ')}
-
         >
           {alertJsx}
         </ReactModal>
