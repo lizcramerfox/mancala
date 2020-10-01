@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactModal from 'react-modal'
-import './AutoDismissAlert.scss'
+import './autoDismissAlert.module.scss'
 
 class AutoDismissAlert extends Component {
   constructor (props) {

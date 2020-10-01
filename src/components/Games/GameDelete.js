@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom'
 import ReactModal from 'react-modal'
 import { gameDestroy } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
-import '../AutoDismissAlert/AutoDismissAlert.scss'
+import '../AutoDismissAlert/autoDismissAlert.module.scss'
 
 
 class Delete extends Component {
