@@ -20,16 +20,16 @@ class Pocket extends Component {
     let classNames = [playerClass, type, 'pocket'].join(' ')
 
     return (
-        <div
-          onClick={this.onClick}
-          className={classNames}
-          id={pocketID}
-          player={player}
-          type={type}
-          pocket={this.props.pocket}
-        >
-          {pocket.toString()} : {stones}
-        </div>
+      <div
+        onClick={this.onClick}
+        className={classNames}
+        id={pocketID}
+        player={player}
+        type={type}
+        pocket={this.props.pocket}
+      >
+        <div className="pocket-display">{pocket.toString()} : {stones}</div>
+      </div>
     )
   }
 }

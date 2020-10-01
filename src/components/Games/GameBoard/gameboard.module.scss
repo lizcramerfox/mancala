@@ -2,22 +2,33 @@ $black: #000;
 $background-mancala: #e0ebeb;
 $background-a: #ff9;
 $background-b: #9f9;
-$delete-button: #ff8375;
 
 .gameboard {
-  // border: 1px solid $black;
   display: grid;
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
+  grid-column-gap: .25rem;
+  grid-row-gap: .25rem;
   grid-template-columns: repeat(8, 100fr);
   grid-template-rows: repeat(2, 100fr);
-  padding: .5rem;
+  padding: .25rem;
 }
 
 .pocket {
   align-self: center;
+  border-radius: .4rem;
+  box-shadow: 0 .25rem .75rem -.25rem $black;
+  cursor: pointer;
   display: flex;
+  height: 6rem;
   justify-content: center;
+  position: relative;
+
+  &:active {
+    top: 1px;
+  }
+}
+
+.pocket-display {
+  align-self: center;
 }
 
 .player-a {
@@ -30,6 +41,11 @@ $delete-button: #ff8375;
 
 .mancala {
   background-color: $background-mancala;
+  cursor: default;
+
+  &:active {
+    top: 0;
+  }
 }
 
 .game-info {
