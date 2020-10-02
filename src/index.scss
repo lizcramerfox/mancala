@@ -1,4 +1,4 @@
-@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
 
 $navy: #122939;
 $blue-sapphire: #22577a;
@@ -8,7 +8,8 @@ $verdigris: #3eb4b6;
 $light-green: #80ed99;
 $tea-green: #c7f9cc;
 $lemon-yellow: #fffd9f;
-$off-white: #fffff5;
+$light-gray: #eaf1f4;
+$dark-gray: #b8c2c6;
 $white: #fff;
 
 $gradient: linear-gradient(180deg, $dark-cyan, $cadet-blue);
@@ -16,7 +17,20 @@ $gradient-lighten: linear-gradient(180deg, $cadet-blue, $verdigris);
 
 
 body {
-  background-color: $off-white;
+  background-color: $light-gray;
+  font-family: 'Poppins', sans-serif;
+}
+
+ul {
+  margin: 0;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  padding-inline-start: 0;
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
 }
 
 button {

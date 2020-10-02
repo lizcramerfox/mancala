@@ -19,6 +19,7 @@ button {
   left: 0;
   margin: auto;
   max-width: 30rem;
+  padding: 3rem;
   position: fixed;
   right: 0;
   z-index: 10000;
@@ -26,6 +27,7 @@ button {
   .alert-heading {
     font-weight: bold;
     display: block;
+    padding-bottom: 1rem;
   }
 
   .alert-body {
@@ -36,17 +38,14 @@ button {
 
 .success {
   background-color: $success-background;
-  color: $success-text;
 }
 
 .warning {
   background-color: $warning-background;
-  color: $warning-text;
 }
 
 .failure {
   background-color: $failure-background;
-  color: $failure-text;
 }
 
 .close {
