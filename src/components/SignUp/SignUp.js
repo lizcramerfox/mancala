@@ -4,9 +4,6 @@ import { withRouter } from 'react-router-dom'
 import { signUp, signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
 
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-
 class SignUp extends Component {
   constructor () {
     super()
@@ -51,49 +48,52 @@ class SignUp extends Component {
 
     return (
       <div className="row">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5">
+        <div>
           <h3>Sign Up</h3>
-          <Form onSubmit={this.onSignUp}>
-            <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                required
+          <form onSubmit={this.onSignUp}>
+            <div>
+              <label for="email">Email</label>
+              <input
+                required="true"
                 type="email"
                 name="email"
+                id="email"
                 value={email}
-                placeholder="Enter email"
+                placeholder="Enter your email"
                 onChange={this.handleChange}
               />
-            </Form.Group>
-            <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                required
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input
+                required="true"
+                type="password"
                 name="password"
+                id="password"
                 value={password}
-                type="password"
-                placeholder="Password"
+                placeholder="Enter password"
                 onChange={this.handleChange}
               />
-            </Form.Group>
-            <Form.Group controlId="passwordConfirmation">
-              <Form.Label>Password Confirmation</Form.Label>
-              <Form.Control
-                required
-                name="passwordConfirmation"
+            </div>
+            <div>
+              <label for="passwordConfirmation">Password Confirmation</label>
+              <input
+                required="true"
+                type="password"
+                name="password"
+                id="passwordConfirmation"
                 value={passwordConfirmation}
-                type="password"
-                placeholder="Confirm Password"
+                placeholder="Confirm password"
                 onChange={this.handleChange}
               />
-            </Form.Group>
-            <Button
-              variant="primary"
-              type="submit"
-            >
-              Submit
-            </Button>
-          </Form>
+            </div>
+            <div>
+              <input
+                variant="primary"
+                type="submit"
+              />
+            </div>
+          </form>
         </div>
       </div>
     )
