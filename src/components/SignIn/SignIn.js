@@ -4,9 +4,6 @@ import { withRouter } from 'react-router-dom'
 import { signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
 
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-
 class SignIn extends Component {
   constructor () {
     super()
@@ -51,36 +48,38 @@ class SignIn extends Component {
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
           <h3>Sign In</h3>
-          <Form onSubmit={this.onSignIn}>
-            <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                required
-                type="email"
+          <form action={this.onSignIn}>
+            <div>
+              <label for="email">Email</label>
+              <input
+                required="true"
+                type="text"
                 name="email"
+                id="email"
                 value={email}
-                placeholder="Enter email"
+                placeholder="Email"
                 onChange={this.handleChange}
               />
-            </Form.Group>
-            <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                required
-                name="password"
-                value={password}
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input
+                required="true"
                 type="password"
+                name="password"
+                id="password"
+                value={password}
                 placeholder="Password"
                 onChange={this.handleChange}
               />
-            </Form.Group>
-            <Button
-              variant="primary"
-              type="submit"
-            >
-              Submit
-            </Button>
-          </Form>
+            </div>
+            <div>
+              <input
+                type="submit"
+                value="Submit"
+              />
+            </div>
+          </form>
         </div>
       </div>
     )
