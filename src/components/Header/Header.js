@@ -1,44 +1,37 @@
 import React, { Fragment } from 'react'
-import { Nav, Navbar } from 'react-bootstrap'
-
 
 const authenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#change-password">Change Password</Nav.Link>
-    <Nav.Link href="#sign-out">Sign Out</Nav.Link>
-    <Nav.Link href="#sign-out">Sign Out</Nav.Link>
-    <Nav.Link href="#games-create">Start a New Game</Nav.Link>
-    <Nav.Link href="#games">View All Games</Nav.Link>
+    <a href="#change-password">Change Password</a>
+    <a href="#sign-out">Sign Out</a>
+    <a href="#sign-out">Sign Out</a>
+    <a href="#games-create">Start a New Game</a>
+    <a href="#games">View All Games</a>
   </Fragment>
 )
 
 const unauthenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#sign-up">Sign Up</Nav.Link>
-    <Nav.Link href="#sign-in">Sign In</Nav.Link>
+    <a href="#sign-up">Sign Up</a>
+    <a href="#sign-in">Sign In</a>
   </Fragment>
 )
 
 const alwaysOptions = (
   <Fragment>
-    <Nav.Link to="/">Home</Nav.Link>
+    <a href="/">Home</a>
   </Fragment>
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
-    <Navbar.Brand href="#">
-      Mancala
-    </Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="ml-auto">
-        { user && <span className="navbar-text mr-2">Welcome, {user.email}</span>}
-        { alwaysOptions }
-        { user ? authenticatedOptions : unauthenticatedOptions }
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
+  <header>
+    <h5>Mancala</h5>
+    <nav>
+      { user && <span> Welcome, {user.email}</span> }
+      { alwaysOptions }
+      { user ? authenticatedOptions : unauthenticatedOptions }
+    </nav>
+  </header>
 )
 
 export default Header
