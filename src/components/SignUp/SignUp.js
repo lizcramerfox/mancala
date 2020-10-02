@@ -47,55 +47,54 @@ class SignUp extends Component {
     const { email, password, passwordConfirmation } = this.state
 
     return (
-      <div className="row">
-        <div>
-          <h3>Sign Up</h3>
-          <form onSubmit={this.onSignUp}>
-            <div>
-              <label for="email">Email</label>
-              <input
-                required="true"
-                type="email"
-                name="email"
-                id="email"
-                value={email}
-                placeholder="Enter your email"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <label for="password">Password</label>
-              <input
-                required="true"
-                type="password"
-                name="password"
-                id="password"
-                value={password}
-                placeholder="Enter password"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <label for="passwordConfirmation">Password Confirmation</label>
-              <input
-                required="true"
-                type="password"
-                name="password"
-                id="passwordConfirmation"
-                value={passwordConfirmation}
-                placeholder="Confirm password"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <input
-                variant="primary"
-                type="submit"
-              />
-            </div>
-          </form>
-        </div>
+      <div className="form">
+        <h3>Sign Up</h3>
+        <form onSubmit={this.onSignUp}>
+          <div>
+            <label for="email">Email</label>
+            <input
+              required="true"
+              type="email"
+              name="email"
+              id="email"
+              value={email}
+              placeholder="Enter your email"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input
+              required="true"
+              type="password"
+              name="password"
+              id="password"
+              value={password}
+              placeholder="Enter password"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label for="passwordConfirmation">Password Confirmation</label>
+            <input
+              required="true"
+              type="password"
+              name="password"
+              id="passwordConfirmation"
+              value={passwordConfirmation}
+              placeholder="Confirm password"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <input
+              variant="primary"
+              type="submit"
+            />
+          </div>
+        </form>
       </div>
+
     )
   }
 }

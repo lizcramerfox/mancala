@@ -45,42 +45,40 @@ class SignIn extends Component {
     const { email, password } = this.state
 
     return (
-      <div className="row">
-        <div>
-          <h3>Sign In</h3>
-          <form action={this.onSignIn}>
-            <div>
-              <label for="email">Email</label>
-              <input
-                required="true"
-                type="email"
-                name="email"
-                id="email"
-                value={email}
-                placeholder="Enter your email"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <label for="password">Password</label>
-              <input
-                required="true"
-                type="password"
-                name="password"
-                id="password"
-                value={password}
-                placeholder="Password"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <input
-                type="submit"
-                value="Submit"
-              />
-            </div>
-          </form>
-        </div>
+      <div className="form">
+        <h3>Sign In</h3>
+        <form action={this.onSignIn}>
+          <div>
+            <label for="email">Email</label>
+            <input
+              required="true"
+              type="email"
+              name="email"
+              id="email"
+              value={email}
+              placeholder="Enter your email"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input
+              required="true"
+              type="password"
+              name="password"
+              id="password"
+              value={password}
+              placeholder="Password"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <input
+              type="submit"
+              value="Submit"
+            />
+          </div>
+        </form>
       </div>
     )
   }
