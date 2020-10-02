@@ -47,11 +47,11 @@ class SignIn extends Component {
     return (
       <div className="form">
         <h3>Sign In</h3>
-        <form action={this.onSignIn}>
+        <form onSubmit={this.onSignIn}>
           <div>
-            <label for="email">Email</label>
+            <label>Email</label>
             <input
-              required="true"
+              required={true}
               type="email"
               name="email"
               id="email"
@@ -61,9 +61,9 @@ class SignIn extends Component {
             />
           </div>
           <div>
-            <label for="password">Password</label>
+            <label>Password</label>
             <input
-              required="true"
+              required={true}
               type="password"
               name="password"
               id="password"

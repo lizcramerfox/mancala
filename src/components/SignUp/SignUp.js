@@ -51,9 +51,9 @@ class SignUp extends Component {
         <h3>Sign Up</h3>
         <form onSubmit={this.onSignUp}>
           <div>
-            <label for="email">Email</label>
+            <label>Email</label>
             <input
-              required="true"
+              required={true}
               type="email"
               name="email"
               id="email"
@@ -63,9 +63,9 @@ class SignUp extends Component {
             />
           </div>
           <div>
-            <label for="password">Password</label>
+            <label>Password</label>
             <input
-              required="true"
+              required={true}
               type="password"
               name="password"
               id="password"
@@ -75,11 +75,11 @@ class SignUp extends Component {
             />
           </div>
           <div>
-            <label for="passwordConfirmation">Password Confirmation</label>
+            <label>Password Confirmation</label>
             <input
-              required="true"
+              required={true}
               type="password"
-              name="password"
+              name="passwordConfirmation"
               id="passwordConfirmation"
               value={passwordConfirmation}
               placeholder="Confirm password"
