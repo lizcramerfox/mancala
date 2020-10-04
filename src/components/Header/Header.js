@@ -1,12 +1,19 @@
 import React, { Fragment } from 'react'
+import './header.module.scss'
 
-const authenticatedOptions = (
+const authenticatedOptionsUser = (
   <Fragment>
     <a href="#change-password">Change Password</a>
     <a href="#sign-out">Sign Out</a>
     <a href="#sign-out">Sign Out</a>
-    <a href="#games-create">Start a New Game</a>
-    <a href="#games">View All Games</a>
+  </Fragment>
+)
+
+const authenticatedOptionsGame = (
+  <Fragment>
+    <a href="#games-create">Start New Game</a>
+    <a href="#games">View Saved Games</a>
+    <a href="/">Home</a>
   </Fragment>
 )
 
@@ -17,19 +24,14 @@ const unauthenticatedOptions = (
   </Fragment>
 )
 
-const alwaysOptions = (
-  <Fragment>
-    <a href="/">Home</a>
-  </Fragment>
-)
 
 const Header = ({ user }) => (
   <header>
-    <h1>Mancala</h1>
+    <h1 className="title">Mancala</h1>
+    <div className="user-welcome"> { user ? <span> Welcome, {user.email}</span> : ''} </div>
     <nav>
-      { user && <span> Welcome, {user.email}</span> }
-      <ul> { alwaysOptions } </ul>
-      <ul> { user ? authenticatedOptions : unauthenticatedOptions } </ul>
+      <div className="auth-links"> { user ? authenticatedOptionsUser : unauthenticatedOptions } </div>
+      <div className="game-links"> { user ? authenticatedOptionsGame : '' } </div>
     </nav>
   </header>
 )
