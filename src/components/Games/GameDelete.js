@@ -73,8 +73,8 @@ class Delete extends Component {
             Are you sure you want to delete this game?
           </div>
           <div>
-            <button className="success" onClick={this.cancelDelete}>Cancel</button>
-            <button className="failure" onClick={this.deleteGame}>Delete</button>
+            <button onClick={this.cancelDelete}>Cancel</button>
+            <button onClick={this.deleteGame}>Delete</button>
           </div>
         </div>
         </ReactModal>
