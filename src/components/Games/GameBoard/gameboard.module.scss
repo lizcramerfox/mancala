@@ -2,6 +2,9 @@ $black: #000;
 $background-mancala: #e0ebeb;
 $background-a: #ff9;
 $background-b: #9f9;
+$game-piece-color: #8eacb1;
+$game-piece-gradient: radial-gradient(circle, #c9d0ce 17%, #8eacb1 100%);
+$white: #fff;
 
 
 
@@ -32,7 +35,16 @@ $background-b: #9f9;
 }
 
 .pocket-display {
+  align-items: center;
   align-self: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: space-around;
+  padding: 15px;
+  width: 100%;
 }
 
 .player-a {
@@ -53,6 +65,22 @@ $background-b: #9f9;
   margin: 0 auto;
   padding: 1rem 0;
   text-align: center;
+}
+
+.game-piece {
+  background: $game-piece-gradient;
+  background-color: $game-piece-color;
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+}
+
+.stones-number {
+  color: white;
+  font-size: 3rem;
+  opacity: .5;
+  position: absolute;
+  z-index: 0;
 }
 
 #AM {

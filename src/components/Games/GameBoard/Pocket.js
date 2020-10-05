@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Pieces from './Pieces'
 import './gameboard.module.scss'
 
 class Pocket extends Component {
@@ -8,10 +9,14 @@ class Pocket extends Component {
     }
   }
 
-  render () {
 
+
+
+  render () {
     const { pocket, stones } = this.props
     const { player, isMancala } = pocket
+
+    console.log(pocket.toString(), " = ", stones)
 
     const playerClass = `player-${player.toLowerCase()}`
     const type = isMancala ? `mancala` : `non-mancala`
@@ -28,7 +33,10 @@ class Pocket extends Component {
         type={type}
         pocket={this.props.pocket}
       >
-        <div className="pocket-display">{pocket.toString()} : {stones}</div>
+        <div className="pocket-display">
+          <div className="stones-number">{stones}</div>
+          <Pieces stones={stones} />
+        </div>
       </div>
     )
   }
