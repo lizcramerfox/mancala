@@ -18,9 +18,11 @@ $white: #fff;
 $gradient: linear-gradient(180deg, $dark-cyan, $cadet-blue);
 $gradient-lighten: linear-gradient(180deg, $cadet-blue, $verdigris);
 
+$background-img: url('/metal-texture.jpg');
 
 body {
   background-color: $white;
+  background-image: $background-img;
   font-family: 'Poppins', sans-serif;
 }
 
