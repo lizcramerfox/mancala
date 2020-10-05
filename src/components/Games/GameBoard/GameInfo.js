@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import './gameboard.module.scss'
 
 class GameInfo extends Component {
@@ -19,13 +19,17 @@ class GameInfo extends Component {
   }
 
   render() {
+    let infoJsx
+
     if (this.props.game.isOver) {
-      return <h4>{this.winnerString()}</h4>
+      infoJsx = <Fragment>{this.winnerString()}</Fragment>
     }
+
+    infoJsx = <Fragment>Player {this.props.game.currentPlayer}'s Turn</Fragment>
 
     return (
       <div className="game-info">
-        <h4>Player {this.props.game.currentPlayer}'s Turn</h4>
+        <h4>{infoJsx}</h4>
       </div>
     )
   }
