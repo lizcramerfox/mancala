@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { signUp, signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
 
+
 class SignUp extends Component {
   constructor () {
     super()
@@ -47,12 +48,13 @@ class SignUp extends Component {
     const { email, password, passwordConfirmation } = this.state
 
     return (
-      <div className="form">
+      <div className="auth">
         <h3>Sign Up</h3>
         <form onSubmit={this.onSignUp}>
-          <div>
-            <label>Email</label>
+          <div className="form-element">
+            <label className='form-label'>Email</label>
             <input
+              className="text-input"
               required={true}
               type="email"
               name="email"
@@ -62,9 +64,10 @@ class SignUp extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div>
-            <label>Password</label>
+          <div className="form-element">
+            <label className='form-label'>Password</label>
             <input
+              className="text-input"
               required={true}
               type="password"
               name="password"
@@ -74,9 +77,10 @@ class SignUp extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div>
-            <label>Password Confirmation</label>
+          <div className="form-element">
+            <label className='form-label'>Confirm Password</label>
             <input
+              className="text-input"
               required={true}
               type="password"
               name="passwordConfirmation"

@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 
 import { signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
+import './auth.module.scss'
 
 class SignIn extends Component {
   constructor () {
@@ -45,12 +46,13 @@ class SignIn extends Component {
     const { email, password } = this.state
 
     return (
-      <div className="form">
+      <div className="auth">
         <h3>Sign In</h3>
         <form onSubmit={this.onSignIn}>
-          <div>
-            <label>Email</label>
+          <div className="form-element">
+            <label className='form-label'>Email</label>
             <input
+              className="text-input"
               required={true}
               type="email"
               name="email"
@@ -60,9 +62,10 @@ class SignIn extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div>
-            <label>Password</label>
+          <div className="form-element">
+            <label className='form-label'>Password</label>
             <input
+              className="text-input"
               required={true}
               type="password"
               name="password"

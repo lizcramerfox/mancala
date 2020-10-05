@@ -5,7 +5,6 @@ const authenticatedOptionsUser = (
   <Fragment>
     <a href="#change-password">Change Password</a>
     <a href="#sign-out">Sign Out</a>
-    <a href="#sign-out">Sign Out</a>
   </Fragment>
 )
 
