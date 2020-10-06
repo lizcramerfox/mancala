@@ -48,12 +48,12 @@ button {
   background-color: $failure-background;
 }
 
-.close {
-  &:active,
-  &:focus {
-    outline: none;
-  }
-}
+// .close {
+//   &:active,
+//   &:focus {
+//     outline: none;
+//   }
+// }
 
 @keyframes light-bounce-in {
   0% {

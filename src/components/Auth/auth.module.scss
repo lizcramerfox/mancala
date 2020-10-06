@@ -3,26 +3,32 @@ $auth-overlay: linear-gradient(
   rgba(0,0,0,0.25) 0%,
   rgba(0,0,0,0.5) 20%,
   rgba(0,0,0,0.25) 60%,
-  rgba(0,0,0,0) 100%);
+  rgba(0,0,0,0) 100%
+);
 
-
-// form {
-//   background: purple;
-// }
+form {
+  display: block;
+}
 
 h3 {
+  font-size: 1rem;
   font-weight: bold;
+  margin: 0;
+  padding: 0 1rem .5rem;
+  text-align: right;
+}
+
+input {
+  background-color: rgba(255, 255, 255, .25);
 }
 
 .auth {
   animation: .5s ease-in-out 0s 1 light-bounce-in;
   background: $auth-overlay;
-  bottom: 1rem;
   left: 0;
   max-width: 60rem;
   padding: 1rem;
   position: fixed;
-  // top: 0;
   z-index: 10000;
 }
 
@@ -35,20 +41,22 @@ h3 {
 
 .form-element {
   display: grid;
-  grid-template-areas: 'text-input label';
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  padding-right: 1rem;
+
+  .form-label {
+    margin-right: 1rem;
+    text-align: right;
+  }
 }
 
-.form-label {
-  grid-area: 'label';
-  margin-right: 1rem;
-  text-align: right;
+.submit-button {
+  display: block;
+  float: right;
+  padding-top: .5rem;
 }
 
-.text-input {
-  grid-area: 'text-input';
-}
+
 
 @keyframes light-bounce-in {
   0% {

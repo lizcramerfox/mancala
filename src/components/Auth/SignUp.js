@@ -90,10 +90,10 @@ class SignUp extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div>
+          <div className="form-element submit-button">
             <input
-              variant="primary"
               type="submit"
+              value="Submit"
             />
           </div>
         </form>

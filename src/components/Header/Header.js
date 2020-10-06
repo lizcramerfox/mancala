@@ -31,6 +31,7 @@ const Header = ({ user }) => (
     <nav>
       <div className="auth-links"> { user ? authenticatedOptionsUser : unauthenticatedOptions } </div>
       <div className="game-links"> { user ? authenticatedOptionsGame : '' } </div>
+      <div className="auth-modal"></div>
     </nav>
   </header>
 )

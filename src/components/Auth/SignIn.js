@@ -75,7 +75,7 @@ class SignIn extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div>
+          <div className="form-element submit-button">
             <input
               type="submit"
               value="Submit"
