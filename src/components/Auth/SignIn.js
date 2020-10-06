@@ -63,7 +63,7 @@ class SignIn extends Component {
             />
           </div>
           <div className="form-element">
-            <label className='form-label'>Password</label>
+            <label className="form-label">Password</label>
             <input
               className="text-input"
               required={true}
