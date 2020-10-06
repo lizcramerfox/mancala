@@ -1,4 +1,4 @@
-@import 'variables.scss';
+@import 'src/variables';
 
 $navy: #122939;
 $blue-sapphire: #22577a;
@@ -18,6 +18,8 @@ $white: #fff;
 $gradient: linear-gradient(180deg, $dark-cyan, $cadet-blue);
 $gradient-lighten: linear-gradient(180deg, $cadet-blue, $verdigris);
 
+$background-img: url('/metal-texture.jpg');
+
 body {
   background-color: $white;
   background-image: $background-img;
@@ -25,12 +27,16 @@ body {
   margin: 0;
 }
 
+a {
+  color: $bright-pop;
+}
+
 button {
   background: $gradient;
   background-color: $cadet-blue;
   border-radius: .4rem;
   box-shadow: 0 .25rem .75rem -.25rem $blue-sapphire;
-  color: $white;
+  color: $medium-pop;
   cursor: pointer;
   display: inline-block;
   font-size: 2rem;
