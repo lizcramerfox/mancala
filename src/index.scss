@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 $navy: #122939;
 $blue-sapphire: #22577a;
 
@@ -12,11 +14,9 @@ $lemon-yellow: #fffd9f;
 $light-gray: #eaf1f4;
 $dark-gray: #b8c2c6;
 $white: #fff;
-
+//
 $gradient: linear-gradient(180deg, $dark-cyan, $cadet-blue);
 $gradient-lighten: linear-gradient(180deg, $cadet-blue, $verdigris);
-
-$background-img: url('/metal-texture.jpg');
 
 body {
   background-color: $white;

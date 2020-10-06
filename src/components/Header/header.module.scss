@@ -1,5 +1,4 @@
-$darkest-gray: #8e9ea4;
-$header-overlay: linear-gradient(90deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.5) 5%, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0) 100%);
+@import '../../variables';
 
 a {
   padding-right: 1rem;
@@ -7,8 +6,8 @@ a {
 }
 
 h1 {
-  background: $header-overlay;
-  color: $darkest-gray;
+  background: $banner-overlay;
+  color: $grayscale-4;
   font-family: 'Raleway Dots', serif;
   font-size: 10rem;
   font-weight: normal;

@@ -1,9 +1,4 @@
-$success-background: #cef1c3;
-$success-text: #2c6919;
-$warning-background: #efdca2;
-$warning-text: #51400e;
-$failure-background: #efb5a2;
-$failure-text: #511e0e;
+@import '../../variables';
 
 button {
   font-size: 1rem;
@@ -13,7 +8,8 @@ button {
 
 .alert {
   align-items: center;
-  animation: .5s ease-in-out 0s 1 light-bounce-in;
+  animation: .5s ease-in-out 0s 1 bounce-up;
+  background: $banner-overlay;
   bottom: 1rem;
   display: flex;
   left: 0;
@@ -36,26 +32,7 @@ button {
   }
 }
 
-.success {
-  background-color: $success-background;
-}
-
-.warning {
-  background-color: $warning-background;
-}
-
-.failure {
-  background-color: $failure-background;
-}
-
-// .close {
-//   &:active,
-//   &:focus {
-//     outline: none;
-//   }
-// }
-
-@keyframes light-bounce-in {
+@keyframes bounce-up {
   0% {
     opacity: 0;
     transform: translateY(20%);

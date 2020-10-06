@@ -1,18 +1,12 @@
-$auth-overlay: linear-gradient(
-  90deg,
-  rgba(0,0,0,0.25) 0%,
-  rgba(0,0,0,0.5) 20%,
-  rgba(0,0,0,0.25) 60%,
-  rgba(0,0,0,0) 100%
-);
+@import '../../variables';
 
 form {
   display: block;
 }
 
 h3 {
-  font-family: 'Raleway Dots', sans-serif;
-  font-size: 2rem;
+  font-family: 'Raleway Dots' sans-serif;
+  font-size: 1rem;
   font-weight: normal;
   margin: 0;
   padding: 0 1rem .5rem;
@@ -20,12 +14,13 @@ h3 {
 }
 
 input {
-  background-color: rgba(255, 255, 255, .25);
+  background-color: $form-input;
+  padding-left: .25rem;
 }
 
 .auth {
   animation: .5s ease-in-out 0s 1 light-bounce-in;
-  background: $auth-overlay;
+  background: $banner-overlay;
   left: 0;
   max-width: 60rem;
   padding: 1rem;

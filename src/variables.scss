@@ -1,2 +1,26 @@
+//  Colors
+$grayscale-1: #1d1e20ff;
+$grayscale-2: #3a3c40ff;
+$grayscale-3: #61646bff;
+$grayscale-4: #94989eff;
+$grayscale-5: #bfc1c540;
 
-$banner-overlay: linear-gradient(90deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.5) 5%, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0) 100%);
+// $color-pop-1: #
+
+//  Images
+$background-img: url('/metal-texture.jpg');
+
+//  Banner Backgrounds
+$banner-gradient-color-a: #00000040;
+$banner-gradient-color-b: #00000080;
+$banner-gradient-color-c: #00000000;
+
+$banner-overlay: linear-gradient(
+  90deg,
+  $banner-gradient-color-a 0%,
+  $banner-gradient-color-b 10%,
+  $banner-gradient-color-c 100%,
+);
+
+//  Forms & Buttons
+$form-input: $grayscale-5;
