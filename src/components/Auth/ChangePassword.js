@@ -10,13 +10,17 @@ class ChangePassword extends Component {
 
     this.state = {
       oldPassword: '',
-      newPassword: ''
+      newPassword: '',
     }
   }
 
   handleChange = event => this.setState({
     [event.target.name]: event.target.value
   })
+
+  goBack = () => {
+    this.props.history.goBack()
+  }
 
   onChangePassword = event => {
     event.preventDefault()
@@ -73,11 +77,14 @@ class ChangePassword extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div className="form-element submit-button">
+          <div className="form-element form-button">
             <input
               type="submit"
               value="Submit"
             />
+            <button
+              onClick={this.goBack}
+            ></button>
           </div>
         </form>
       </div>

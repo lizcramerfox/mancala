@@ -46,13 +46,15 @@ input {
   }
 }
 
-.submit-button {
+.form-button {
   display: block;
   float: right;
   padding-top: .5rem;
 }
 
-
+.hide {
+  display: none;
+}
 
 @keyframes light-bounce-in {
   0% {

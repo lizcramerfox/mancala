@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { withRouter } from 'react-router-dom'
 import './header.module.scss'
 
 const authenticatedOptionsUser = (
@@ -12,7 +13,7 @@ const authenticatedOptionsGame = (
   <Fragment>
     <a href="#games-create">Start New Game</a>
     <a href="#games">View Saved Games</a>
-    <a href="/">Home</a>
+    <a href="#">Home</a>
   </Fragment>
 )
 
@@ -36,4 +37,4 @@ const Header = ({ user }) => (
   </header>
 )
 
-export default Header
+export default withRouter(Header)

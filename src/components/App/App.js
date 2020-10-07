@@ -12,6 +12,7 @@ import ChangePassword from '../Auth/ChangePassword'
 import GameCreate from '../Games/GameCreate'
 import GameIndex from '../Games/GameIndex'
 import GameShow from '../Games/GameShow'
+import Home from '../Home/Home'
 
 
 class App extends Component {
@@ -63,6 +64,9 @@ class App extends Component {
           )} />
 
           {/* _____RESTful Routes for Games_____ */}
+          <AuthenticatedRoute user={user} exact path='/' render={() => (
+            <Home msgAlert={this.msgAlert} user={user} />
+          )} />
           <AuthenticatedRoute user={user} exact path='/games' render={() => (
             <GameIndex msgAlert={this.msgAlert} user={user} />
           )} />

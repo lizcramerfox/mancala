@@ -6,8 +6,8 @@ $grayscale-4: #94989eff;
 $grayscale-5: #bfc1c540;
 
 // Colors
-$bright-pop: #d6ff73;
-$medium-pop: #61d4e1;
+$bright-pop: #bdf33f;
+$medium-pop: #1ec9cc;
 
 
 //  Fonts
@@ -26,6 +26,10 @@ $banner-overlay: linear-gradient(
   $banner-gradient-color-b 10%,
   $banner-gradient-color-c 100%,
 );
+
+// $box-shadow-dark: 4px 4px rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+// $box-shadow-bright: 4px 8px 8px 4px #1ec9cc8, 4px 8px 8px 4px #1ec9cc40;
+
 
 //  Forms & Buttons
 $form-input: $grayscale-5;

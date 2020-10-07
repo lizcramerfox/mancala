@@ -35,7 +35,7 @@ button {
   background: $gradient;
   background-color: $cadet-blue;
   border-radius: .4rem;
-  box-shadow: 0 .25rem .75rem -.25rem $blue-sapphire;
+  // box-shadow: 0 .25rem .75rem -.25rem $blue-sapphire;
   color: $medium-pop;
   cursor: pointer;
   display: inline-block;
@@ -54,7 +54,17 @@ button {
   }
 }
 
+.big-button {
+  background: $banner-gradient-color-a;
+  // box-shadow: $box-shadow-bright;
+  color: $bright-pop;
+  font-size: 1.5rem;
+  margin: 0 2rem 0 0;
+  padding: 3rem;
+}
+
 .delete-button {
+  background: $form-input;
   display: flex;
   justify-content: center;
   margin: 2rem 0;

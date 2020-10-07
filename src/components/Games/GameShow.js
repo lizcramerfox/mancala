@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import { gameShow } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
 import Game from './GameBoard/Game'
@@ -58,4 +59,4 @@ class GameShow extends Component {
   }
 }
 
-export default GameShow
+export default withRouter(GameShow)

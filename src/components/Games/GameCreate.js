@@ -4,7 +4,6 @@ import { Redirect } from 'react-router-dom'
 import { gameCreate } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
 import mancala from 'mancala'
-// import Game from './GameBoard/Game'
 
 class GameCreate extends Component {
   constructor (props) {

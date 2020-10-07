@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+// import { Redirect } from 'react-router'
 
 import { signUp, signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
@@ -12,7 +13,8 @@ class SignUp extends Component {
     this.state = {
       email: '',
       password: '',
-      passwordConfirmation: ''
+      passwordConfirmation: '',
+      showModal: true,
     }
   }
 
@@ -45,10 +47,13 @@ class SignUp extends Component {
   }
 
   render () {
+    console.log(this.state)
     const { email, password, passwordConfirmation } = this.state
 
+    const classNames = 'auth'
+
     return (
-      <div className="auth">
+      <div className={classNames}>
         <h3>Sign Up</h3>
         <form onSubmit={this.onSignUp}>
           <div className="form-element">
@@ -90,7 +95,7 @@ class SignUp extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div className="form-element submit-button">
+          <div className="form-element form-button">
             <input
               type="submit"
               value="Submit"
