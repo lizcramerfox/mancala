@@ -22,6 +22,11 @@ class SignUp extends Component {
     [event.target.name]: event.target.value
   })
 
+  goBack = event => {
+    event.preventDefault()
+    this.props.history.goBack()
+  }
+
   onSignUp = event => {
     event.preventDefault()
 
@@ -100,6 +105,12 @@ class SignUp extends Component {
               type="submit"
               value="Submit"
             />
+            <button
+              onClick={this.goBack}
+              value="Cancel"
+            >
+              Cancel
+            </button>
           </div>
         </form>
       </div>
