@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { gameIndex } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
 import './games.scss'
@@ -56,4 +56,4 @@ class GameIndex extends Component {
   }
 }
 
-export default GameIndex
+export default withRouter(GameIndex)

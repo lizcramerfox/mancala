@@ -27,7 +27,6 @@ class GameCreate extends Component {
           created: true
         })
       })
-      .then(console.log(`in componentDidMount`))
       .then(() => {
         msgAlert({
           heading: 'Success',

@@ -16,8 +16,6 @@ class Pocket extends Component {
     const { pocket, stones } = this.props
     const { player, isMancala } = pocket
 
-    console.log(pocket.toString(), " = ", stones)
-
     const playerClass = `player-${player.toLowerCase()}`
     const type = isMancala ? `mancala` : `non-mancala`
     const pocketID = `${pocket.toString()}`

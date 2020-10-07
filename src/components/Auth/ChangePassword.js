@@ -85,7 +85,9 @@ class ChangePassword extends Component {
             <button
               onClick={this.goBack}
               value="Cancel"
-            >Cancel</button>
+            >
+              Cancel
+            </button>
           </div>
         </form>
       </div>

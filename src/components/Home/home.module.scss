@@ -1,4 +1,16 @@
+@import '../../variables';
+
 .home {
   display: flex;
   padding: 1rem;
+}
+
+.big-button {
+  background: $banner-gradient-color-a;
+  margin: 0 2rem 0 0;
+  padding: 3rem;
+
+  &:hover {
+    box-shadow: 0 0 2rem $medium-pop;
+  }
 }
