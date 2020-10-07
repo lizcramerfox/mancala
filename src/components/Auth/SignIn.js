@@ -19,6 +19,11 @@ class SignIn extends Component {
     [event.target.name]: event.target.value
   })
 
+  goBack = event => {
+    event.preventDefault()
+    this.props.history.goBack()
+  }
+
   onSignIn = event => {
     event.preventDefault()
 
@@ -80,6 +85,12 @@ class SignIn extends Component {
               type="submit"
               value="Submit"
             />
+             <button
+              onClick={this.goBack}
+              value="Cancel"
+            >
+              Cancel
+            </button>
           </div>
         </form>
       </div>
