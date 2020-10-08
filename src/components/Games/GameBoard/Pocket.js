@@ -27,13 +27,14 @@ class Pocket extends Component {
         onClick={this.onClick}
         className={classNames}
         id={pocketID}
+        key={pocketID}
         player={player}
         type={type}
         pocket={this.props.pocket}
       >
         <div className="pocket-display">
           <div className="stones-number">{stones}</div>
-          <Pieces stones={stones} />
+            <Pieces stones={stones} />
         </div>
       </div>
     )

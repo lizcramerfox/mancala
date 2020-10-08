@@ -20,6 +20,7 @@ class GameInfo extends Component {
 
   render() {
     const classNames =[this.props.game.currentPlayer.toLowerCase()]
+    console.log(classNames)
 
     let infoJsx
 

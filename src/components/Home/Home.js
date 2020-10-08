@@ -7,7 +7,7 @@ class Home extends Component {
   render() {
 
     return (
-      <div class="home">
+      <div className="home">
         <a className="button big-button" href="#/games-create">
           Start New Game
         </a>
