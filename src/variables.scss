@@ -5,6 +5,11 @@ $grayscale-3: #61646b;
 $grayscale-4: #94989e;
 $grayscale-5: #bfc1c540;
 
+$black-5: #0000000d;
+$black-20: #00000033;
+$black-30: #0000004d;
+$black-85: #000000d9;
+
 $white-50: #ffffff80;
 $white-75: #ffffffbf;
 
@@ -39,7 +44,7 @@ $center-overlay: linear-gradient(
 
 
 //  Gameboard
-// $pocket-background: ;
+$pocket-background: radial-gradient(circle, $black-20 0%, $black-30 70%, $black-85 100%);
 
 
 //  Buttons

@@ -1,3 +1,5 @@
+@import '../../../variables';
+
 $black: #000;
 $background-mancala: #e0ebeb;
 $background-a: #ff9;
@@ -19,13 +21,18 @@ $white: #fff;
 
 .pocket {
   align-self: center;
+  background: $black-5;
   border-radius: .2rem;
-  box-shadow: 0 .25rem .75rem -.25rem $black;
+  box-shadow: inset .3rem .3rem .8rem .1rem $black-30;
   cursor: pointer;
   display: flex;
   height: 6rem;
   justify-content: center;
   position: relative;
+
+  &:hover {
+
+  }
 
   &:active {
     top: 1px;
@@ -45,17 +52,15 @@ $white: #fff;
   width: 100%;
 }
 
-.player-a {
-  background-color: $background-a;
-}
+// .player-a {
+//   background-color: $background-a;
+// }
 
-.player-b {
-  background-color: $background-b;
-}
+// .player-b {
+//   background-color: $background-b;
+// }
 
 .mancala {
-  background-color: $background-mancala;
-  cursor: default;
   height: 100%;
 }
 

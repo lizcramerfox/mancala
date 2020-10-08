@@ -9,9 +9,6 @@ class Pocket extends Component {
     }
   }
 
-
-
-
   render () {
     const { pocket, stones } = this.props
     const { player, isMancala } = pocket
