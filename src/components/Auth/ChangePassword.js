@@ -78,7 +78,7 @@ class ChangePassword extends Component {
             />
           </div>
           <div className="form-element form-button">
-          <input
+            <input
               className="button"
               onClick={this.goBack}
               type="submit"

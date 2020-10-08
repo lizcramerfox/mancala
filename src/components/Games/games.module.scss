@@ -1,8 +1,11 @@
 @import '../../variables';
 
-
 li {
   padding-bottom: .5rem;
+}
+
+span {
+  padding: 0 .18rem 0 .1rem;
 }
 
 .container {
@@ -12,21 +15,28 @@ li {
 .delete-button {
   color: $medium-pop;
   display: flex;
-  margin: 1rem auto;
-  padding: .5rem;
+  margin: 2rem auto 2rem;
+  padding: .2rem;
   justify-content: center;
-  width: 10rem;
-  
-  &:hover {
-    box-shadow: 0 0 2rem $medium-pop;
-    color: $medium-pop;
-  }
+  width: 20rem;
 }
 
 .game-info {
-  margin: 0 auto;
-  padding: 1rem 0;
+  background: $center-overlay;
+  color: $white-75;  
+  font-size: 1rem;
+  margin: 1rem auto;
+  padding: .2rem 0;
   text-align: center;
+  width: 70%;
+
+  .a {
+    color: $bright-pop;
+  }
+
+  .b {
+    color: $medium-pop;
+  }
 }
 
 .game-view {

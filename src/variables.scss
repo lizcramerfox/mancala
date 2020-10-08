@@ -6,6 +6,7 @@ $grayscale-4: #94989e;
 $grayscale-5: #bfc1c540;
 
 $white-50: #ffffff80;
+$white-75: #ffffffbf;
 
 // Colors
 $bright-pop: #bdf33f;
@@ -28,6 +29,14 @@ $banner-overlay: linear-gradient(
   $banner-gradient-color-b 10%,
   $banner-gradient-color-c 100%,
 );
+
+$center-overlay: linear-gradient(
+  90deg,
+  $banner-gradient-color-c 0%,
+  $banner-gradient-color-b 50%,
+  $banner-gradient-color-c 100%,
+);
+
 
 $form-input: $grayscale-5;
 $button-background: $grayscale-5;

@@ -19,17 +19,19 @@ class GameInfo extends Component {
   }
 
   render() {
+    const classNames =[this.props.game.currentPlayer.toLowerCase()]
+
     let infoJsx
 
     if (this.props.game.isOver) {
       infoJsx = <Fragment>{this.winnerString()}</Fragment>
     }
 
-    infoJsx = <Fragment>Player {this.props.game.currentPlayer}'s Turn</Fragment>
+    infoJsx = <Fragment>Player <span className={classNames}>{this.props.game.currentPlayer}</span>'s Turn</Fragment>
 
     return (
       <div className="game-info">
-        <h4>{infoJsx}</h4>
+        {infoJsx}
       </div>
     )
   }
