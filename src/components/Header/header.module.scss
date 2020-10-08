@@ -3,6 +3,10 @@
 a {
   padding-right: 1rem;
   text-decoration: none;
+
+  &:hover {
+    color: $medium-pop;
+  }
 }
 
 h1 {

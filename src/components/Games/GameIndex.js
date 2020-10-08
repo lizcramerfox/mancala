@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { gameIndex } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
-import './games.scss'
+import './games.module.scss'
 
 class GameIndex extends Component {
   constructor (props) {
