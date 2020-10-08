@@ -65,25 +65,25 @@ class Delete extends Component {
           onRequestClose={this.cancelDelete}
           className={"alert"}
         >
-        <div>
-          <div className="alert-heading">
-            Confirm Delete
-          </div>
-          <div className="alert-message">
-            Are you sure you want to delete this game?
-          </div>
           <div>
-            <button onClick={this.cancelDelete}>Cancel</button>
-            <button onClick={this.deleteGame}>Delete</button>
+            <div className="alert-heading">
+              Confirm Delete
+            </div>
+            <div className="alert-message">
+              Are you sure you want to delete this game?
+            </div>
+            <div className="button-container">
+              <button onClick={this.cancelDelete}>Cancel</button>
+              <button onClick={this.deleteGame}>Delete</button>
+            </div>
           </div>
-        </div>
         </ReactModal>
       )
     }
 
     return (
-      <div className="delete-button">
-        <button onClick={this.showModal}>Delete Game</button>
+      <div className="container button delete-button" onClick={this.showModal}>
+        Delete Game
       </div>
     )
   }

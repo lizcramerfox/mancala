@@ -102,15 +102,16 @@ class SignUp extends Component {
           </div>
           <div className="form-element form-button">
             <input
+              className="button"
+              onClick={this.goBack}
+              type="submit"
+              value="Cancel"
+            />
+            <input
+              className="button"
               type="submit"
               value="Submit"
             />
-            <button
-              onClick={this.goBack}
-              value="Cancel"
-            >
-              Cancel
-            </button>
           </div>
         </form>
       </div>

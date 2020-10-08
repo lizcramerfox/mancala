@@ -6,8 +6,6 @@ $game-piece-color: #8eacb1;
 $game-piece-gradient: radial-gradient(circle, #c9d0ce 17%, #8eacb1 100%);
 $white: #fff;
 
-
-
 .gameboard {
   display: grid;
   grid-column-gap: .25rem;
@@ -59,12 +57,6 @@ $white: #fff;
   background-color: $background-mancala;
   cursor: default;
   height: 100%;
-}
-
-.game-info {
-  margin: 0 auto;
-  padding: 1rem 0;
-  text-align: center;
 }
 
 .game-piece {

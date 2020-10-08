@@ -8,10 +8,10 @@ class Home extends Component {
 
     return (
       <div class="home">
-        <a className="big-button" href="#/games-create">
+        <a className="button big-button" href="#/games-create">
           Start New Game
         </a>
-        <a className="big-button" href="#/games">
+        <a className="button big-button" href="#/games">
           View Saved Games
         </a>
       </div>

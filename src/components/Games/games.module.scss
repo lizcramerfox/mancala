@@ -1,21 +1,37 @@
 @import '../../variables';
 
-l {
-  list-style-type: none;
+
+li {
+  padding-bottom: .5rem;
 }
 
-// .button, .input-button {
-//   width: 15rem;
-//   margin: .5rem 0;
-//   background: $banner-gradient-color-a;
-//   margin: 0 2rem 0 0;
-//   padding: 3rem;
+.container {
+  width: 100%;
+}
 
-//   &:hover {
-//     box-shadow: 0 0 2rem $medium-pop;
-//     color: $medium-pop
-//   }
-// }
+.delete-button {
+  color: $medium-pop;
+  display: flex;
+  margin: 1rem auto;
+  padding: .5rem;
+  justify-content: center;
+  width: 10rem;
+  
+  &:hover {
+    box-shadow: 0 0 2rem $medium-pop;
+    color: $medium-pop;
+  }
+}
+
+.game-info {
+  margin: 0 auto;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.game-view {
+  justify-content: center;
+}
 
 .index {
   padding: 0 1rem;

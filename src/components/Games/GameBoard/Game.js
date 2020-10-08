@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { gameUpdate } from '../../../api/game'
 import messages from '../../AutoDismissAlert/messages'
-
-
 import './gameboard.module.scss'
 import Board from './Board'
 import GameInfo from './GameInfo'
@@ -44,7 +42,7 @@ class Game extends Component {
     const { id, user, msgAlert } = this.props
 
     return (
-      <div>
+      <div className="game-view">
         <GameInfo
           id={id}
           game={this.state.game}
