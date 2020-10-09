@@ -5,9 +5,10 @@ $background-img: url('/metal-texture.jpg');
 body {
   background-color: $grayscale-5;
   background-image: $background-img;
-  font-family: 'Poppins', sans-serif;
+  font-family: $body-font;
   font-weight: 300;
   margin: 0;
+  text-shadow: 0 0 .4rem $black-85;
 }
 
 a {

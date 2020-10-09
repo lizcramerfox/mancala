@@ -10,23 +10,27 @@ a {
 }
 
 h1 {
-  background: $banner-overlay;
-  color: $grayscale-4;
-  font-family: 'Raleway Dots', serif;
+  // background: $banner-overlay;
+  color: $white-35;
+  font-family: $title-font;
   font-size: 8rem;
-  font-weight: normal;
+  font-weight: 600;
+  letter-spacing: 1.5rem;
   margin: 0;
+  text-shadow: 0 0 .75rem $black-85;
 }
 
 header {
+  background: $banner-overlay;
   display: block;
   margin: 2rem 0 .5rem;
 }
 
 nav {
   display: grid;
+  font-size: .8rem;
   grid-template-columns: 1fr 1fr;
-  padding: 1rem 0 0 1rem;
+  padding: .5rem 0 .5rem 1rem;
 }
 
 .auth-links {
@@ -40,7 +44,7 @@ nav {
 
 .user-welcome {
   color: $medium-pop;
-  background: $banner-overlay;
+  background: $black-30;
   padding: .05rem 1rem;
-  margin-top: 1rem;
+  min-height: 2rem;
 }
