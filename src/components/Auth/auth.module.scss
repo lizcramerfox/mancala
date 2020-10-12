@@ -23,16 +23,9 @@ input {
   background: $banner-overlay;
   left: 0;
   max-width: 60rem;
-  padding: 1rem;
+  padding: 2rem;
   position: fixed;
   z-index: 10000;
-}
-
-.close {
-  &:active,
-  &:focus {
-    outline: none;
-  }
 }
 
 .form-element {

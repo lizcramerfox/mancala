@@ -30,9 +30,9 @@ $white: #fff;
   justify-content: center;
   position: relative;
 
-  &:hover {
+  // &:hover {
 
-  }
+  // }
 
   &:active {
     top: 1px;
@@ -78,12 +78,6 @@ $white: #fff;
   opacity: .5;
   position: absolute;
   z-index: 0;
-}
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
 }
 
 #AM {

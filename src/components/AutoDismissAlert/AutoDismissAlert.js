@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactModal from 'react-modal'
 import './autoDismissAlert.module.scss'
 
 class AutoDismissAlert extends Component {
@@ -25,6 +24,7 @@ class AutoDismissAlert extends Component {
 
   render () {
     const { variant, heading, message } = this.props
+    const classNames = ['alert', variant].join(' ')
 
     const alertJsx = (
       <div>
@@ -39,16 +39,13 @@ class AutoDismissAlert extends Component {
 
     if (this.state.showModal) {
       return (
-        <ReactModal
-          ariaHideApp={true}
-          shouldCloseOnOverlayClick={true}
-          shouldCloseOnEsc={true}
+        <div
+          className={classNames}
           onRequestClose={this.handleClose}
           isOpen={this.state.showModal}
-          className={['alert', variant].join(' ')}
         >
           {alertJsx}
-        </ReactModal>
+        </div>
       )
     }
     return null
