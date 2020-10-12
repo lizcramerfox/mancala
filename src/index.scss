@@ -5,7 +5,7 @@ $background-img: url('/metal-texture.jpg');
 body {
   background-color: $black-50;
   background-image: $background-img;
-  color: $white-100;
+  color: $white-85;
   font-family: $body-font;
   font-weight: 400;
   letter-spacing: .05rem;
@@ -26,14 +26,20 @@ ul {
   padding: 0;
 }
 
+input {
+  background: $form-input;
+  padding: .2rem .3rem;
+}
+
 .button {
-  background: $center-overlay;
-  cursor: pointer;
-  margin: .25rem 0 .25rem .5rem;
-  padding: .25rem 1rem;
-  text-align: center;
+  background: $button-background;
+  border: none;
+  box-shadow: $button-shadow-black;
+  font-family: $body-font;
+  padding: .1rem;
   
   &:hover {
-    color: $bright-pop;
+    box-shadow: $button-shadow-inset, $button-shadow-low-pop;
+    text-shadow: $button-text-shadow-white;
   }
 }

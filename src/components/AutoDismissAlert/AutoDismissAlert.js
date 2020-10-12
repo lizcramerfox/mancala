@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import './autoDismissAlert.module.scss'
 
 class AutoDismissAlert extends Component {
@@ -15,7 +15,7 @@ class AutoDismissAlert extends Component {
   }
 
   componentDidMount () {
-    this.timer = setTimeout(this.handleClose, 5000)
+    this.timer = setTimeout(this.handleClose, 4000)
   }
 
   componentWillUnmount () {
@@ -27,14 +27,14 @@ class AutoDismissAlert extends Component {
     const classNames = ['alert', variant].join(' ')
 
     const alertJsx = (
-      <div>
+      <Fragment>
         <div className="alert-heading">
           {heading}
         </div>
         <div className="alert-message">
           {message}
         </div>
-      </div>
+      </Fragment>
     )
 
     if (this.state.showModal) {

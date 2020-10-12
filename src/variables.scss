@@ -46,7 +46,7 @@ $lower-pop-50: #006f8680;
 $lower-pop-25: #006f8640;
 $lower-pop-10: #006f861a;
 
-$failure: #ff6262;
+$danger: #ff6262;
 $success: $medium-pop;
 
 //  Fonts
@@ -66,8 +66,7 @@ $banner-overlay: linear-gradient(
   $banner-gradient-color-c 100%,
 );
 
-$center-overlay: linear-gradient(
-  radial-gradient,
+$center-overlay: radial-gradient(
   $black-5 0%,
   $black-50 50%,
   $black-5 100%,
@@ -83,6 +82,11 @@ $pocket-background: radial-gradient(circle, $black-20 0%, $black-30 70%, $black-
 
 
 //  Buttons
-$form-input: $grayscale-5;
-$button-background: $grayscale-5;
+$form-input: $white-35;
+$button-background: $white-20;
+$button-shadow-black: 0 0 .5rem $black-50;
+$button-shadow-inset: inset .1rem .1rem .5rem $black-50;
+$button-shadow-low-pop: 0 0 .5rem $low-pop-75;
+
+$button-text-shadow-white: 0 0 .5rem $white-75;
 

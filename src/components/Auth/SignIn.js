@@ -40,7 +40,7 @@ class SignIn extends Component {
       .catch(error => {
         this.setState({ email: '', password: '' })
         msgAlert({
-          heading: 'Sign In Failed with error: ' + error.message,
+          heading: 'Sign In Failed',
           message: messages.signInFailure,
           variant: 'danger'
         })
@@ -80,7 +80,7 @@ class SignIn extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div className="form-element form-button">
+          <div className="form-element form-buttons">
             <input
               className="button"
               onClick={this.goBack}

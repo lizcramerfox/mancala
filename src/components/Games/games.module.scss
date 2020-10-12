@@ -13,22 +13,29 @@ span {
 }
 
 .delete-button {
-  color: $medium-pop;
+  background: $gradient-colors-inverse, $gradient-colors;
+  border-radius: .1rem;
   display: flex;
-  margin: 2rem auto 2rem;
+  font-size: .8rem;
+  margin: 1rem auto 2rem;
   padding: .2rem;
   justify-content: center;
-  width: 20rem;
+  width: 10rem;
+
+  &:hover {
+    text-shadow: 0 0 .5rem $black-50;
+  }
 }
 
 .game-info {
-  background: $center-overlay;
+  background: $banner-overlay;
+  box-shadow: $header-box-shadow;
   color: $white-75;  
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin: 1rem auto;
   padding: .2rem 0;
   text-align: center;
-  width: 70%;
+  width: 100%;
 
   .a {
     color: $bright-pop;

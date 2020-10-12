@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import ReactModal from 'react-modal'
 import { gameDestroy } from '../../api/game'
 import messages from '../AutoDismissAlert/messages'
 import '../AutoDismissAlert/autoDismissAlert.module.scss'
@@ -57,27 +56,21 @@ class Delete extends Component {
 
     if (this.state.showModal) {
       return (
-        <ReactModal
-          ariaHideApp={true}
-          isOpen={true}
-          shouldCloseOnEsc={true}
-          shouldCloseOnOverlayClick={true}
+        <div 
           onRequestClose={this.cancelDelete}
-          className={"alert"}
+          className={"alert modal"}
         >
-          <div>
-            <div className="alert-heading">
-              Confirm Delete
-            </div>
-            <div className="alert-message">
-              Are you sure you want to delete this game?
-            </div>
-            <div className="button-container">
-              <button onClick={this.cancelDelete}>Cancel</button>
-              <button onClick={this.deleteGame}>Delete</button>
-            </div>
+          <div className="alert-heading failure">
+            Confirm Delete
           </div>
-        </ReactModal>
+          <div className="alert-message">
+            Are you sure you want to delete this game?
+          </div>
+          <div className="button-container">
+            <button className="button" onClick={this.cancelDelete}>Cancel</button>
+            <button className="button" onClick={this.deleteGame}>Delete</button>
+          </div>
+        </div>
       )
     }
 
