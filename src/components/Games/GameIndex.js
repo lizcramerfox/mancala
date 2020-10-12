@@ -40,7 +40,7 @@ class GameIndex extends Component {
 
     const gamesJsx = games.map(game => (
       <li key={game.id}>
-        <Link className="button" to={`/games/${game.id}`}>
+        <Link className="button"to={`/games/${game.id}`}>
           Game {game.id}
         </Link>
       </li>

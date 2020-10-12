@@ -3,16 +3,18 @@
 $background-img: url('/metal-texture.jpg');
 
 body {
-  background-color: $grayscale-5;
+  background-color: $black-50;
   background-image: $background-img;
+  color: $white-100;
   font-family: $body-font;
-  font-weight: 300;
+  font-weight: 400;
+  letter-spacing: .05rem;
   margin: 0;
-  text-shadow: 0 0 .4rem $black-85;
+  text-shadow: 0 0 .5rem $black-100;
 }
 
 a {
-  color: $bright-pop;
+  color: $low-pop;
 }
 
 p {
@@ -26,7 +28,6 @@ ul {
 
 .button {
   background: $center-overlay;
-  color: $medium-pop;
   cursor: pointer;
   margin: .25rem 0 .25rem .5rem;
   padding: .25rem 1rem;
