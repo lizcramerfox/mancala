@@ -12,9 +12,19 @@ class AutoDismissAlert extends Component {
 
   handleClose = () => {
     this.setState({ showModal: false })
+    document.removeEventListener('mousedown', this.handleClick) 
+  }
+    
+
+  handleClick = (event) => {
+    if (this.node.contains(event.target)) {
+      return;
+    }
+    this.handleClose()
   }
 
   componentDidMount () {
+    document.addEventListener('mousedown', this.handleClick)
     this.timer = setTimeout(this.handleClose, 5000)
   }
 
@@ -43,6 +53,8 @@ class AutoDismissAlert extends Component {
           className={classNames}
           onRequestClose={this.handleClose}
           isOpen={this.state.showModal}
+          ref={node => this.node = node}
+          onClick={this.handleClick}
         >
           {alertJsx}
         </div>
