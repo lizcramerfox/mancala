@@ -32,7 +32,7 @@ class SignIn extends Component {
     signIn(this.state)
       .then(res => setUser(res.data.user))
       .then(() => msgAlert({
-        heading: 'Sign In Success',
+        heading: 'Success',
         message: messages.signInSuccess,
         variant: 'success'
       }))
@@ -40,7 +40,7 @@ class SignIn extends Component {
       .catch(error => {
         this.setState({ email: '', password: '' })
         msgAlert({
-          heading: 'Sign In Failed',
+          heading: 'Failed',
           message: messages.signInFailure,
           variant: 'danger'
         })
