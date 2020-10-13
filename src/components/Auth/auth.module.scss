@@ -7,12 +7,15 @@ form {
 }
 
 h3 {
-  color: $medium-pop;
-  font-size: 1rem;
-  font-weight: normal;
+  text-align: bottom;
+  color: $white-50;
+  font-family: $title-font;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: .75rem;
   margin: 0;
   padding: 0 1rem .5rem;
-  text-align: right;
+  text-shadow: $button-text-shadow-white;
 }
 
 .auth {

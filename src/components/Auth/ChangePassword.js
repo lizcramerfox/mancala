@@ -39,7 +39,7 @@ class ChangePassword extends Component {
         msgAlert({
           heading: 'Failed',
           message: messages.changePasswordFailure,
-          variant: 'failure'
+          variant: 'danger'
         })
       })
   }

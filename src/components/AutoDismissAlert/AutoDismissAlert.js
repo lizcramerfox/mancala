@@ -15,7 +15,7 @@ class AutoDismissAlert extends Component {
   }
 
   componentDidMount () {
-    this.timer = setTimeout(this.handleClose, 4000)
+    this.timer = setTimeout(this.handleClose, 5000)
   }
 
   componentWillUnmount () {
