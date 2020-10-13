@@ -15,11 +15,10 @@ h1 {
   color: $white-60;
   font-family: $title-font;
   font-size: 7rem;
-  font-weight: 800;
-  letter-spacing: 2rem;
+  font-weight: 400;
   margin: 0;
-  padding: 0 1rem;
-  text-shadow: 0 0 3rem $low-pop-50, 0 0 5rem $medium-pop-50;
+  padding: .5rem 1rem;
+  text-shadow: $button-text-shadow-white;
 }
 
 header {
