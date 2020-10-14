@@ -8,14 +8,13 @@ form {
 
 h3 {
   text-align: bottom;
-  color: $white-50;
+  color: $white-85;
   font-family: $title-font;
   font-size: 3rem;
-  font-weight: 800;
-  letter-spacing: .75rem;
+  font-weight: 200;
   margin: 0;
-  padding: 0 1rem .5rem;
-  text-shadow: $button-text-shadow-white;
+  padding: 1rem;
+  
 }
 
 .auth {
@@ -52,7 +51,7 @@ h3 {
 
   .button {
     margin: 1rem 0 0 1rem;
-    min-width: 50%;
+    padding: .1rem
   }
   
   .text-input {
