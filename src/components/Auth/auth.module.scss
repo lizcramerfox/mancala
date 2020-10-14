@@ -13,8 +13,7 @@ h3 {
   font-size: 3rem;
   font-weight: 200;
   margin: 0;
-  padding: 1rem;
-  
+  padding: 0;
 }
 
 .auth {
@@ -29,15 +28,14 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  width: 66.66%;
+  width: 75%;
 }
 
 .form-element {
   justify-self: right;
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-  padding: .2rem 1rem;
+  padding: .3rem 1rem;
 
   .form-label {
     margin-right: 1rem;
@@ -60,6 +58,11 @@ h3 {
     font-size: .8rem;
     border: none;
   }
+}
+
+.title {
+  padding: 1rem;
+  grid-area: 1 / 1 / 2 / 2;
 }
 
 @keyframes light-bounce-in {

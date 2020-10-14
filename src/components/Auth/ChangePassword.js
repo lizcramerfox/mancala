@@ -49,10 +49,10 @@ class ChangePassword extends Component {
 
     return (
       <div className="auth">
+        <div className="title">
+          <h3>Change Password</h3>
+        </div>
         <form onSubmit={this.onChangePassword}>
-          {/* <div className="form-element">
-            <h3>Change Password</h3>
-          </div> */}
           <div className="form-element">
             <label className="form-label">Old password</label>
             <input

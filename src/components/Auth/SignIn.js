@@ -32,7 +32,7 @@ class SignIn extends Component {
     signIn(this.state)
       .then(res => setUser(res.data.user))
       .then(() => msgAlert({
-        heading: 'Success',
+        heading: 'Sign In Success',
         message: messages.signInSuccess,
         variant: 'success'
       }))
@@ -40,7 +40,7 @@ class SignIn extends Component {
       .catch(error => {
         this.setState({ email: '', password: '' })
         msgAlert({
-          heading: 'Failed',
+          heading: 'Sign In Failed',
           message: messages.signInFailure,
           variant: 'danger'
         })
@@ -52,7 +52,9 @@ class SignIn extends Component {
 
     return (
       <div className="auth">
-        <h3>Sign In</h3>
+        <div className="title">
+          <h3>Sign In</h3>
+        </div>
         <form onSubmit={this.onSignIn}>
           <div className="form-element">
             <label className='form-label'>Email</label>

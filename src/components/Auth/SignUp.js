@@ -59,7 +59,9 @@ class SignUp extends Component {
 
     return (
       <div className={classNames}>
-        <h3>Sign Up</h3>
+        <div className="title">
+          <h3>Sign Up</h3>
+        </div>
         <form onSubmit={this.onSignUp}>
           <div className="form-element">
             <label className='form-label'>Email</label>
