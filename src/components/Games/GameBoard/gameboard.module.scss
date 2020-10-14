@@ -1,33 +1,35 @@
 @import '../../../variables';
 
-$black: #000;
-$background-mancala: #e0ebeb;
-$background-a: #ff9;
-$background-b: #9f9;
-$game-piece-color: #8eacb1;
-$game-piece-gradient: radial-gradient(circle, #c9d0ce 17%, #8eacb1 100%);
-$white: #fff;
+
+.game-view {
+  background: $white-10;
+}
 
 .gameboard {
+  background: $black-5;
+  box-shadow: $header-box-shadow;
+  border-radius: 1rem;
   display: grid;
-  grid-column-gap: .25rem;
-  grid-row-gap: .25rem;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
   grid-template-columns: repeat(8, 100fr);
   grid-template-rows: repeat(2, 100fr);
-  margin: 0 auto;
-  padding: .25rem;
-  width: 80%;
+  margin: 3rem auto;
+  padding: 2rem;
+  width: 70%
 }
 
 .pocket {
+  align-items: center;
   align-self: center;
-  background: $black-5;
-  border-radius: .2rem;
-  box-shadow: inset .3rem .3rem .8rem .1rem $black-30;
-  cursor: pointer;
+  border-radius: .5rem;
+  box-shadow: $pocket-box-shadow;
   display: flex;
-  height: 6rem;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
+  min-height: 5rem;
+  padding: .5rem;
   position: relative;
 
   // &:hover {
@@ -39,29 +41,17 @@ $white: #fff;
   }
 }
 
-.pocket-display {
-  align-items: center;
-  align-self: center;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: 100%;
-  justify-content: space-around;
-  padding: 15px;
-  width: 100%;
+.player-a {
+  background: $pocket-background-a;
 }
 
-// .player-a {
-//   background-color: $background-a;
-// }
-
-// .player-b {
-//   background-color: $background-b;
-// }
+.player-b {
+  background: $pocket-background-b;
+}
 
 .mancala {
-  height: 100%;
+  box-sizing: border-box;
+  height: 100%
 }
 
 .game-piece {
@@ -73,17 +63,22 @@ $white: #fff;
 }
 
 .stones-number {
-  color: white;
-  font-size: 3rem;
+  color: $white-100;
+  font-size: 1rem;
+  font-weight: 800;
+  text-shadow: 0 0 .5rem $black-85;
   opacity: .5;
   position: absolute;
+
   z-index: 0;
 }
 
 #AM {
   grid-area: 1 / 8 / 3 / 9;
+  margin-left: 1rem;
 }
 
 #BM {
   grid-area: 1 / 1 / 3 / 2;
+  margin-right: 1rem;
 }

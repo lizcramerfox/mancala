@@ -29,11 +29,9 @@ class Pocket extends Component {
         type={type}
         pocket={this.props.pocket}
       >
-        <div className="pocket-display">
-          <div className="stones-number">{stones}</div>
-            <Pieces stones={stones} />
-        </div>
-      </div>
+        <Pieces stones={stones} />
+        <div className="stones-number">{stones}</div>    
+      </div>  
     )
   }
 }

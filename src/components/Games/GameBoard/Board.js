@@ -32,7 +32,7 @@ class Board extends Component {
       })
 
     return (
-      <div className="gameboard clearfix">
+      <div className="gameboard">
         <Fragment>{mancalaB}</Fragment>
         <Fragment>{pocketsB}</Fragment>
         <Fragment>{pocketsA}</Fragment>
