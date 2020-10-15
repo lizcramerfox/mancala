@@ -5,7 +5,14 @@ li {
 }
 
 span {
-  padding: 0 .18rem 0 .1rem;
+  background: $black-5;
+  border-radius: .4rem;
+  box-shadow: $game-info-player;
+  font-family: $title-font;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 .5rem;
+  padding: .5rem .75rem;
 }
 
 .container {
@@ -28,21 +35,26 @@ span {
 }
 
 .game-info {
-  background: $banner-overlay;
-  box-shadow: $header-box-shadow;
-  color: $white-75;  
-  font-size: 1.5rem;
+  background: $white-20;
+  border-radius: 1rem;
+  box-shadow: $board-box-shadow;
+  border: $board-border;
+  font-size: 1.5em;
+  font-weight: 100;
+  letter-spacing: .05rem;
   margin: 1rem auto;
-  padding: .2rem 0;
+  padding: 1.5rem 0;
   text-align: center;
-  width: 100%;
+  width: 30%;
 
   .a {
-    color: $bright-pop;
+    border: .15rem solid $bright-pop-50;
+    color: $bright-pop-75;
   }
 
   .b {
-    color: $medium-pop;
+    border: .15rem solid $lower-pop-50;
+    color: $lower-pop;
   }
 }
 

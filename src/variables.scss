@@ -11,6 +11,7 @@ $black-15: #00000026;
 $black-20: #00000033;
 $black-30: #0000004d;
 $black-50: #00000080;
+$black-75: #000000bf;
 $black-85: #000000d9;
 $black-100: #000000;
 
@@ -79,16 +80,19 @@ $gradient-colors-inverse: linear-gradient(90deg, $bright-pop-25 0%, $medium-pop-
 
 $header-box-shadow: inset 0 0 1.3rem $black-50;
 
+
 //  Gameboard
-$pocket-box-shadow: inset .3rem .3rem .8rem $black-20, inset 0 0 2rem $black-30;
+$board-border: .05rem $black-30 solid;
+$board-box-shadow: inset 0 0 3rem $black-50, inset .3rem 1rem 2rem $black-30;
+
+$pocket-box-shadow: inset .5rem .5rem 1rem $black-15, inset 0 0 1.5rem $black-30;
 $pocket-background-a: radial-gradient($bright-pop-25 0%, $medium-pop-25 75%);
 $pocket-background-b: radial-gradient($low-pop-25 50%, $lower-pop-25 100%);
 
-$game-piece-color: #8eacb1;
-$game-piece-gradient: radial-gradient(circle, #c9d0ce 17%, #8eacb1 100%);
+$game-piece-color: $black-85;
+$game-piece-gradient: radial-gradient(circle, $white-85 10%, $white-20 100%);
 
-
-
+$game-info-player: inset 0 0 .5rem $white-50;
 
 //  Buttons
 $form-input: $white-35;
