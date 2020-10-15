@@ -2,15 +2,28 @@
 
 .home {
   display: flex;
-  padding: 1rem;
+  padding: $container-element-padding;
+  justify-content: center;
 }
 
 .big-button {
-  margin: 0 2rem 0 0;
-  padding: 3rem;
+  background: $big-button-background;
+  border: none;
+  box-shadow: $button-shadow-black, $button-shadow-white, $big-button-shadow-inset;
+  font-family: $body-font;
+  border-radius: .5rem;
+  text-align: center;
+  text-shadow: $big-button-text-shadow;
+  margin: 0 2rem;
+  padding: 1rem 1rem;
+  width: 30%;
 
   &:hover {
-    box-shadow: 0 0 2rem $medium-pop;
-    color: $medium-pop;
+    background: $big-button-background-hover;
+    box-shadow: $button-shadow-black, $button-shadow-white, $big-button-shadow-inset;
+  }
+
+  &:active {
+    box-shadow: $button-shadow-white, $big-button-shadow-inset
   }
 }

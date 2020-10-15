@@ -53,7 +53,8 @@ $danger: #ff6262;
 $success: $medium-pop;
 
 //  Fonts
-$title-font: 'Bungee Outline', serif;
+$title-font: 'Bungee Outline', sans-serif;
+$title-alt-font: 'Bungee Inline', sans-serif;
 $body-font: 'Montserrat', sans-serif;
 
 
@@ -95,11 +96,19 @@ $game-piece-gradient: radial-gradient(circle, $white-85 10%, $white-20 100%);
 $game-info-player: inset 0 0 .5rem $white-50;
 
 //  Buttons
-$form-input: $white-35;
 $button-background: $white-20;
 $button-shadow-black: 0 0 .5rem $black-50;
 $button-shadow-inset: inset .1rem .1rem .5rem $black-50;
 $button-shadow-low-pop: 0 0 .5rem $low-pop-75;
+$button-text-shadow-white: 0 0 .5rem $white-50;
+$button-shadow-white: 0 0 3rem $white-35, 0 0 1rem $black-50;
 
-$button-text-shadow-white: 0 0 .5rem $white-75;
+$big-button-shadow-inset: inset 0 0 1rem $black-20, inset 0 0 3rem $black-15;
+$big-button-background: $pocket-background-a, $black-10;
+$big-button-background-hover: $pocket-background-b;
+$big-button-text-shadow: 0 0 .04rem $black-50;
 
+$form-input: $white-35;
+
+//  Layout
+$container-element-padding: 2rem 1rem;

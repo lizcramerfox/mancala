@@ -8,16 +8,19 @@ body {
   color: $white-85;
   font-family: $body-font;
   margin: 0;
-  text-shadow: 0 0 .5rem $black-100;
+}
+
+h4 {
+  color: $white-75;
+  font-family: $title-alt-font;
+  font-size: 2rem;  
+  font-weight: 200;
+  letter-spacing: .05rem;
 }
 
 a {
   color: $low-pop;
 }
-
-// p {
-//   font-size: 1rem;
-// }
 
 ul {
   list-style-type: none;
