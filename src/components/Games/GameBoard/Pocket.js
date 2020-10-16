@@ -11,14 +11,23 @@ class Pocket extends Component {
   }
   
   checkValidity = () => {
-    if (!this.props.pocket.isMancala && (this.props.pocket.player === this.props.game.currentPlayer)) {
-      return 'valid'
-    } else {
+    if (this.props.pocket.isMancala) {
       return 'invalid'
     }
+
+    if (this.props.pocket.player !== this.props.game.currentPlayer) {
+      return 'invalid'
+    }
+
+    if (this.props.stones === 0) {
+      return 'invalid'
+    }
+    
+    return 'valid'
   }
 
   render () {
+    console.log(`stones = `, this.props.stones)
     const { pocket, stones } = this.props
     const { player, isMancala } = pocket
 
