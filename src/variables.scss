@@ -90,17 +90,18 @@ $header-box-shadow: inset 0 0 1.3rem $black-50;
 
 //  Gameboard
 
-$board-box-shadow: inset 0 0 3rem $black-30, inset 0 0 .5rem $black-10, inset 1rem 1rem 2rem $black-10, inset -.5rem -.5rem 3rem $black-10;
+$board-box-shadow: inset 0 0 3rem $black-30, inset 0 0 .5rem $black-10, inset 1rem 1rem 2rem $black-30, inset -.5rem -.5rem 2rem $black-20;
 $board-background: $white-25;
 
-$pocket-box-shadow: inset 1rem 1rem 1rem $black-10, inset 0 0 3rem $black-20, inset 0 0 1rem $black-10, 0 0 1.5rem $white-10;
+$pocket-box-shadow-valid: inset 1rem 1rem 1rem $black-10, inset 0 0 3rem $black-20, 0 0 1.5rem $white-100, 0 0 .5rem $white-85;
+$pocket-box-shadow-invalid: inset 1rem 1rem 1rem $black-10, inset 0 0 3rem $black-20, inset 0 0 1rem $black-10, 0 0 1.5rem $black-10;
 $pocket-background-a: radial-gradient($bright-pop-25 0%, $medium-pop-25 75%);
 $pocket-background-b: radial-gradient($low-pop-25 50%, $lower-pop-25 100%);
 
 $game-piece-color: $black-85;
 $game-piece-gradient: radial-gradient(circle, $white-85 10%, $white-30 100%);
 
-$game-info-span-shadow: inset 0 0 .5rem $black-20, inset 0 0 1rem $black-30;
+$game-info-span-shadow: inset 0 0 .5rem $black-20, inset 0 0 1rem $black-30, 0 0 .5rem $white-85, 0 0 1.2rem $white-85;
 $game-info-text-shadow: 0 0 .5rem $black-30;
 
 

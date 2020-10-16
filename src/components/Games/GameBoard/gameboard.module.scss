@@ -18,7 +18,6 @@
   align-self: center;
   box-sizing: border-box;
   border-radius: .5rem;
-  box-shadow: $pocket-box-shadow;
   display: flex;
   box-sizing: border-box;
   height: 100%;
@@ -27,14 +26,6 @@
   flex-wrap: wrap;
   justify-content: center;
   padding: 1rem;
-
-  // &:hover {
-
-  // }
-
-  &:active {
-    top: 1px;
-  }
 }
 
 .player-a {
@@ -47,6 +38,7 @@
 
 .mancala {
   box-sizing: border-box;
+  box-shadow: $pocket-box-shadow-invalid;
   height: 100%;
   padding: 1rem;
   position: relative;
@@ -59,6 +51,22 @@
   height: 1rem;
   width: 1rem;
   margin: .05rem;
+}
+
+.invalid {
+  box-shadow: $pocket-box-shadow-invalid;
+}
+
+.valid {
+  box-shadow: $pocket-box-shadow-valid;
+
+  &:hover {
+    
+  }
+
+  &:active {
+    top: 1px;
+  }
 }
 
 .stones-number {

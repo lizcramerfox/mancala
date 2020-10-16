@@ -3,17 +3,20 @@ import Pieces from './Pieces'
 import './gameboard.module.scss'
 
 class Pocket extends Component {
+  
   onClick = () => {
-    if (!this.props.pocket.isMancala) {
+    if (!this.props.pocket.isMancala ) {
       return this.props.playTurn(this.props.pocket.index, this.props.pocket.player)
     }
   }
-
-  // isValid = () => {
-  //   if (this.props.pocket.player === this.props.game.currentPlayer) {
-      
-  //   }
-  // }
+  
+  checkValidity = () => {
+    if (!this.props.pocket.isMancala && (this.props.pocket.player === this.props.game.currentPlayer)) {
+      return 'valid'
+    } else {
+      return 'invalid'
+    }
+  }
 
   render () {
     const { pocket, stones } = this.props
@@ -22,8 +25,9 @@ class Pocket extends Component {
     const playerClass = `player-${player.toLowerCase()}`
     const type = isMancala ? `mancala` : `non-mancala`
     const pocketID = `${pocket.toString()}`
-
-    let classNames = [playerClass, type, 'pocket'].join(' ')
+    const validity = this.checkValidity()
+   
+    let classNames = [validity, playerClass, type, 'pocket'].join(' ')
 
     return (
       <div
@@ -33,7 +37,6 @@ class Pocket extends Component {
         key={pocketID}
         player={player}
         type={type}
-        pocket={this.props.pocket}
       >
         <Pieces stones={stones} />
         <div className="stones-number">{stones}</div>    
