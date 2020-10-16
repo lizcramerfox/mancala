@@ -61,11 +61,12 @@
   box-shadow: $pocket-box-shadow-valid;
 
   &:hover {
-    
+    cursor: pointer;
   }
 
   &:active {
     top: 1px;
+    bottom: 1px;
   }
 }
 
