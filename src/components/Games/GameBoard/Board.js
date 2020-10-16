@@ -4,6 +4,8 @@ import Pocket from './Pocket'
 
 class Board extends Component {
   render() {
+    console.log(`this.props.game = `, this.props.game)
+    
     const entriesArray = Array.from(this.props.game.board.pockets.entries())
 
     const pocketsA = entriesArray

@@ -52,7 +52,6 @@ class SignUp extends Component {
   }
 
   render () {
-    console.log(this.state)
     const { email, password, passwordConfirmation } = this.state
 
     const classNames = 'auth'

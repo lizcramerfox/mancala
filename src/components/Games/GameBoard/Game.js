@@ -47,8 +47,15 @@ class Game extends Component {
           id={id}
           game={this.state.game}
         />
-        <Board playTurn={this.playTurn} game={this.state.game} />
-        <GameDelete id={id} user={user} msgAlert={msgAlert} />
+        <Board 
+          playTurn={this.playTurn} 
+          game={this.state.game} 
+        />
+        <GameDelete 
+          id={id} 
+          user={user} 
+          msgAlert={msgAlert} 
+        />
       </div>
     )
   }
