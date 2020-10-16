@@ -11,15 +11,15 @@ span {
   padding: .8rem 1rem;
 }
 
-.container {
-  width: 100%;
+.delete-container {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: .5rem 6rem;
 }
 
 .delete-button {
   color: $white-100;
-
-  font-size: .75rem;
-  text-align: right;
+  font-size: .8rem;
 
   &:hover {
     cursor: pointer;

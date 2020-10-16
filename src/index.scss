@@ -32,6 +32,10 @@ input {
   padding: .2rem .3rem;
 }
 
+p {
+  display: inline;
+}
+
 .button {
   background: $button-background;
   border: none;

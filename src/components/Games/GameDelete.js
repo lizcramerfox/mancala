@@ -75,8 +75,10 @@ class Delete extends Component {
     }
 
     return (
-      <div className="container delete-button" onClick={this.showModal}>
-        Delete Game?
+      <div className="delete-container">
+        <p className="delete-button" onClick={this.showModal}>
+          Delete Game?
+        </p>
       </div>
     )
   }
