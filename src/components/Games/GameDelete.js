@@ -60,7 +60,7 @@ class Delete extends Component {
           onRequestClose={this.cancelDelete}
           className={"alert modal"}
         >
-          <div className="alert-heading failure">
+          <div className="alert-heading danger">
             Confirm Delete
           </div>
           <div className="alert-message">
