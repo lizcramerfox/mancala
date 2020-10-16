@@ -5,14 +5,10 @@ li {
 }
 
 span {
-  background: $black-5;
   border-radius: .4rem;
-  box-shadow: $game-info-player;
-  font-family: $title-font;
-  font-size: 2rem;
-  font-weight: 800;
-  margin: 0 .5rem;
-  padding: .5rem .75rem;
+  font-family: $title-alt-font;
+  margin: 0 .75rem;
+  padding: .8rem 1rem;
 }
 
 .container {
@@ -20,47 +16,39 @@ span {
 }
 
 .delete-button {
-  background: $gradient-colors-inverse, $gradient-colors;
-  border-radius: .1rem;
-  display: flex;
-  font-size: .8rem;
-  margin: 1rem auto 2rem;
-  padding: .2rem;
-  justify-content: center;
-  width: 10rem;
+  color: $white-100;
+
+  font-size: .75rem;
+  text-align: right;
 
   &:hover {
-    text-shadow: 0 0 .5rem $black-50;
+    cursor: pointer;
+    text-decoration: underline;
   }
 }
 
 .game-info {
-  background: $white-20;
-  border-radius: 1rem;
-  box-shadow: $board-box-shadow;
-  border: $board-border;
-  font-size: 1.5em;
-  font-weight: 100;
-  letter-spacing: .05rem;
-  margin: 1rem auto;
+  font-size: 1.5rem;
+  letter-spacing: .1rem;
+  margin: 0 auto;
   padding: 1.5rem 0;
   text-align: center;
-  width: 30%;
+  text-shadow: $game-info-text-shadow;
 
   .a {
-    border: .15rem solid $bright-pop-50;
-    color: $bright-pop-75;
+    background: $pocket-background-a;
+    box-shadow: $game-info-span-shadow;
   }
 
   .b {
-    border: .15rem solid $lower-pop-50;
-    color: $lower-pop;
+    background: $pocket-background-b, $white-15;
+    box-shadow: $game-info-span-shadow;
   }
 }
 
 .game-view {
   justify-content: center;
-  margin: 3rem 0 1rem;
+  margin: 0 2rem;
 }
 
 .index {

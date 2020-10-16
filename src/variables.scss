@@ -8,16 +8,22 @@ $grayscale-5: #bfc1c540;
 $black-5: #0000000d;
 $black-10: #0000001a;
 $black-15: #00000026;
+$black-25: #00000040;
 $black-20: #00000033;
 $black-30: #0000004d;
+$black-40: #00000066;
 $black-50: #00000080;
 $black-75: #000000bf;
 $black-85: #000000d9;
 $black-100: #000000;
 
 $white-10: #ffffff1a;
+$white-15: #ffffff26;
 $white-20: #ffffff33;
+$white-25: #ffffff40;
+$white-30: #ffffff4d;
 $white-35: #ffffff59;
+$white-40: #ffffff66;
 $white-50: #ffffff80;
 $white-60: #ffffff80;
 $white-75: #ffffffbf;
@@ -83,17 +89,20 @@ $header-box-shadow: inset 0 0 1.3rem $black-50;
 
 
 //  Gameboard
-$board-border: .05rem $black-30 solid;
-$board-box-shadow: inset 0 0 3rem $black-50, inset .3rem 1rem 2rem $black-30;
 
-$pocket-box-shadow: inset .5rem .5rem 1rem $black-15, inset 0 0 1.5rem $black-30;
+$board-box-shadow: inset 0 0 3rem $black-40, inset 0 0 .5rem $black-10, inset 1rem 1rem 2rem $black-10, inset -.5rem -.5rem 3rem $black-10;
+$board-background: $white-25;
+
+$pocket-box-shadow: inset 1rem 1rem 1rem $black-10, inset 0 0 3rem $black-20, inset 0 0 1rem $black-10, 0 0 1.5rem $white-10;
 $pocket-background-a: radial-gradient($bright-pop-25 0%, $medium-pop-25 75%);
 $pocket-background-b: radial-gradient($low-pop-25 50%, $lower-pop-25 100%);
 
 $game-piece-color: $black-85;
-$game-piece-gradient: radial-gradient(circle, $white-85 10%, $white-20 100%);
+$game-piece-gradient: radial-gradient(circle, $white-85 10%, $white-30 100%);
 
-$game-info-player: inset 0 0 .5rem $white-50;
+$game-info-span-shadow: inset 0 0 .5rem $black-20, inset 0 0 1rem $black-30;
+$game-info-text-shadow: 0 0 .5rem $black-30;
+
 
 //  Buttons
 $button-background: $white-20;
@@ -104,8 +113,8 @@ $button-text-shadow-white: 0 0 .5rem $white-50;
 $button-shadow-white: 0 0 3rem $white-35, 0 0 1rem $black-50;
 
 $big-button-shadow-inset: inset 0 0 1rem $black-20, inset 0 0 3rem $black-15;
-$big-button-background: $pocket-background-a, $black-10;
-$big-button-background-hover: $pocket-background-b;
+$big-button-background: $pocket-background-b;
+$big-button-background-hover: $pocket-background-a, $black-10;
 $big-button-text-shadow: 0 0 .04rem $black-50;
 
 $form-input: $white-35;

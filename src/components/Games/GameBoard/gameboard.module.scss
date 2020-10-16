@@ -1,42 +1,32 @@
 @import '../../../variables';
 
-.game-view { 
-  height: 100%;
-}
-
 .gameboard {
-  background: $white-20;
+  background: $board-background;
   box-shadow: $board-box-shadow;
-  border: $board-border;
   border-radius: 1rem;
   display: grid;
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
   grid-template-columns: repeat(8, 10fr);
   grid-template-rows: repeat(2, 10fr);
-  margin: 1rem auto;
-  padding: 3rem;
-  width: 75%;
+  margin: 0 6rem;
+  padding: 2rem 3rem;
 }
 
 .pocket {
   align-items: center;
   align-self: center;
   box-sizing: border-box;
-  border: $board-border;
   border-radius: .5rem;
   box-shadow: $pocket-box-shadow;
   display: flex;
   box-sizing: border-box;
   height: 100%;
-  
-  min-height: rem;
+  min-height: 7rem;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   padding: 1rem;
-  position: relative;
-  
 
   // &:hover {
 
@@ -52,13 +42,14 @@
 }
 
 .player-b {
-  background: $pocket-background-b;
+  background: $pocket-background-b, $white-10;
 }
 
 .mancala {
   box-sizing: border-box;
   height: 100%;
   padding: 1rem;
+  position: relative;
 }
 
 .game-piece {
