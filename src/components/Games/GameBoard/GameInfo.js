@@ -8,26 +8,24 @@ class GameInfo extends Component {
       .find(([pocket, stones]) => pocket.player === player && pocket.isMancala === true)[1]
   }
 
-  winnerString() {
-    if (this.mancalaStones('A') > this.mancalaStones('B')) {
-      return 'Player A Wins'
-    } if (this.mancalaStones('B') > this.mancalaStones('A')) {
-      return 'Player B Wins'
-    } else {
-      return 'Tie Game'
-    }
-  }
-
   render() {
     const classNames =[this.props.game.currentPlayer.toLowerCase()]
 
     let infoJsx
 
-    if (this.props.game.isOver) {
-      infoJsx = <Fragment>{this.winnerString()}</Fragment>
+    if (!this.props.game.isover) {
+      infoJsx = <Fragment>Player <span className={classNames}>{this.props.game.currentPlayer}</span>'s Turn</Fragment>
+    }
+    
+    if (this.props.game.isOver && (this.mancalaStones('A') > this.mancalaStones('B'))) {
+      infoJsx = <Fragment>Player <span className={classNames}>{this.win}</span> Wins!</Fragment>
     }
 
-    infoJsx = <Fragment>Player <span className={classNames}>{this.props.game.currentPlayer}</span>'s Turn</Fragment>
+    if (this.props.game.isOver && (this.mancalaStones('A') > this.mancalaStones('B'))) {
+      infoJsx = <Fragment>Tie Game!</Fragment>
+    }
+
+
 
     return (
       <div className="game-info">
