@@ -7,10 +7,42 @@
   display: grid;
   grid-column-gap: 1.5rem;
   grid-row-gap: 1.5rem;
-  grid-template-columns: repeat(8, 10fr);
-  grid-template-rows: repeat(2, 10fr);
+  grid-template-columns: 1fr 70% 1fr;
+  grid-template-rows: repeat(2, 1fr);
   margin: 0 6rem;
-  padding: 2rem 3rem;
+  padding: 2rem;
+}
+
+.mancalaA {
+  display: grid;
+  grid-area: 1 / 3 / 3 / 4;
+}
+
+.mancalaB {
+  display: grid;
+  grid-area: 1 / 1 / 3 / 2;
+}
+
+.pocketsA {
+  grid-area: 2 / 2 / 3 / 3;
+  display: inline-grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.pocketsB {
+  grid-area: 1 / 2 / 2 / 3;
+  display: inline-grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+
+}
+
+.mancala {
+  box-sizing: border-box;
+  box-shadow: $pocket-box-shadow-invalid;
+  position: relative;
+
 }
 
 .pocket {
@@ -26,6 +58,7 @@
   flex-wrap: wrap;
   justify-content: center;
   padding: 1rem;
+  margin: 0 .5rem;
 }
 
 .player-a {
@@ -34,14 +67,6 @@
 
 .player-b {
   background: $pocket-background-b, $white-10;
-}
-
-.mancala {
-  box-sizing: border-box;
-  box-shadow: $pocket-box-shadow-invalid;
-  height: 100%;
-  padding: 1rem;
-  position: relative;
 }
 
 .game-piece {
@@ -66,7 +91,7 @@
 
   &:active {
     top: 1px;
-    bottom: 1px;
+    left: 1px;
   }
 }
 
@@ -79,10 +104,14 @@
   position: absolute;
 }
 
-#AM {
-  grid-area: 1 / 8 / 3 / 9;
+.winner {
+  box-shadow: $pocket-box-shadow-valid;
 }
 
-#BM {
-  grid-area: 1 / 1 / 3 / 2;
-}
+// #AM {
+//   grid-area: 1 / 8 / 3 / 9;
+// }
+
+// #BM {
+//   grid-area: 1 / 1 / 3 / 2;
+// }

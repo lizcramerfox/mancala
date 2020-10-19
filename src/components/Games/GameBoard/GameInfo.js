@@ -9,7 +9,7 @@ class GameInfo extends Component {
   }
 
   render() {
-    const classNames =[this.props.game.currentPlayer.toLowerCase()]
+    const classNames =[this.props.game.currentPlayer.toLowerCase(), 'player-display'].join(' ')
 
     let infoJsx
 
@@ -18,14 +18,16 @@ class GameInfo extends Component {
     }
     
     if (this.props.game.isOver && (this.mancalaStones('A') > this.mancalaStones('B'))) {
-      infoJsx = <Fragment>Player <span className={classNames}>{this.win}</span> Wins!</Fragment>
+      infoJsx = <Fragment>Player <span className={classNames}>A</span> Wins!</Fragment>
+    }
+    
+    if (this.props.game.isOver && (this.mancalaStones('A') < this.mancalaStones('B'))) {
+      infoJsx = <Fragment>Player <span className={classNames}>B</span> Wins!</Fragment>
     }
 
-    if (this.props.game.isOver && (this.mancalaStones('A') > this.mancalaStones('B'))) {
-      infoJsx = <Fragment>Tie Game!</Fragment>
+    if (this.props.game.isOver && (this.mancalaStones('A') === this.mancalaStones('B'))) {
+      infoJsx = <Fragment><span className={classNames}>Tie Game!</span></Fragment>
     }
-
-
 
     return (
       <div className="game-info">

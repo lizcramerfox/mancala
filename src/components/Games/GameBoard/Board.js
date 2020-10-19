@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import './gameboard.module.scss'
 import Pocket from './Pocket'
 
@@ -30,13 +30,33 @@ class Board extends Component {
       .map(([pocket, stones]) => {
         return <Pocket game={this.props.game} pocket={pocket} stones={stones} key={pocket.toString()} />
       })
+    
+    // const mancalaClassesA = () => {
+    //   if (!this.props.game.isOver) {
+    //     return null
+    //   }
+      
+    //   if ((mancalaA[0].props.stones > mancalaB[0].props.stones) || (mancalaA[0].props.stones === mancalaB[0].props.stones)) {
+    //     return 'winner'
+    //   }
+    // }
+
+    // const mancalaClassesB = () => {
+    //   if (!this.props.game.isOver) {
+    //     return null
+    //   }
+      
+    //   if ((mancalaA[0].props.stones < mancalaB[0].props.stones) || (mancalaA[0].props.stones === mancalaB[0].props.stones)) {
+    //     return 'winner'
+    //   }
+    // }
 
     return (
       <div className="gameboard">
-        <Fragment>{mancalaB}</Fragment>
-        <Fragment>{pocketsB}</Fragment>
-        <Fragment>{pocketsA}</Fragment>
-        <Fragment>{mancalaA}</Fragment>
+        <span className="mancalaB">{mancalaB}</span>
+        <span className="pocketsB">{pocketsB}</span>
+        <span className="pocketsA">{pocketsA}</span>
+        <span className="mancalaA">{mancalaA}</span>
       </div>
     )
   }
