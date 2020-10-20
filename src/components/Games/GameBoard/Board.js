@@ -13,7 +13,7 @@ class Board extends Component {
     return player === 'A' ? 'B' : 'A'
   }
 
-  isWinner = (player) => {
+  isWinner(player) {
     if (!this.props.game.isOver) {
       return false
     }
@@ -41,17 +41,14 @@ class Board extends Component {
     const mancalaA = entriesArray
       .filter(([pocket, stones]) => pocket.player === "A" && pocket.isMancala === true)
       .map(([pocket, stones]) => {
-        return <Pocket isWinner={this.isWinner} game={this.props.game} pocket={pocket} stones={stones} key={pocket.toString()} />
+        return <Pocket isWinner={this.isWinner('A')} game={this.props.game} pocket={pocket} stones={stones} key={pocket.toString()} />
       })
 
     const mancalaB = entriesArray
       .filter(([pocket, stones]) => pocket.player === "B" && pocket.isMancala === true)
       .map(([pocket, stones]) => {
-        return <Pocket isWinner={this.isWinner} game={this.props.game} pocket={pocket} stones={stones} key={pocket.toString()} />
+        return <Pocket isWinner={this.isWinner('B')} game={this.props.game} pocket={pocket} stones={stones} key={pocket.toString()} />
       })
-
-    const mancalaStonesA = mancalaA[0].props.stones
-    const mancalaStonesB = mancalaA[0].props.stones
    
     return (
       <div className="gameboard">
