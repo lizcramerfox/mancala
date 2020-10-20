@@ -13,7 +13,7 @@ class GameInfo extends Component {
 
     let infoJsx
 
-    if (!this.props.game.isover) {
+    if (!this.props.game.isOver) {
       infoJsx = <Fragment>Player <span className={classNames}>{this.props.game.currentPlayer}</span>'s Turn</Fragment>
     }
     

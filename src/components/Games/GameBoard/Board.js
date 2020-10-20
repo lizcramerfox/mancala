@@ -3,6 +3,25 @@ import './gameboard.module.scss'
 import Pocket from './Pocket'
 
 class Board extends Component {
+  // Refactor later:
+  mancalaStones(player) {
+    return Array.from(this.props.game.board.pockets.entries())
+      .find(([pocket, stones]) => pocket.player === player && pocket.isMancala === true)[1]
+  }
+
+  oppositePlayer(player) {
+    return player === 'A' ? 'B' : 'A'
+  }
+
+  isWinner = (player) => {
+    if (!this.props.game.isOver) {
+      return false
+    }
+
+    return this.mancalaStones(player) >= this.mancalaStones(this.oppositePlayer(player))
+  }
+
+
   render() {
     const entriesArray = Array.from(this.props.game.board.pockets.entries())
 
@@ -22,35 +41,18 @@ class Board extends Component {
     const mancalaA = entriesArray
       .filter(([pocket, stones]) => pocket.player === "A" && pocket.isMancala === true)
       .map(([pocket, stones]) => {
-        return <Pocket game={this.props.game} pocket={pocket} stones={stones} key={pocket.toString()} />
+        return <Pocket isWinner={this.isWinner} game={this.props.game} pocket={pocket} stones={stones} key={pocket.toString()} />
       })
 
     const mancalaB = entriesArray
       .filter(([pocket, stones]) => pocket.player === "B" && pocket.isMancala === true)
       .map(([pocket, stones]) => {
-        return <Pocket game={this.props.game} pocket={pocket} stones={stones} key={pocket.toString()} />
+        return <Pocket isWinner={this.isWinner} game={this.props.game} pocket={pocket} stones={stones} key={pocket.toString()} />
       })
-    
-    // const mancalaClassesA = () => {
-    //   if (!this.props.game.isOver) {
-    //     return null
-    //   }
-      
-    //   if ((mancalaA[0].props.stones > mancalaB[0].props.stones) || (mancalaA[0].props.stones === mancalaB[0].props.stones)) {
-    //     return 'winner'
-    //   }
-    // }
 
-    // const mancalaClassesB = () => {
-    //   if (!this.props.game.isOver) {
-    //     return null
-    //   }
-      
-    //   if ((mancalaA[0].props.stones < mancalaB[0].props.stones) || (mancalaA[0].props.stones === mancalaB[0].props.stones)) {
-    //     return 'winner'
-    //   }
-    // }
-
+    const mancalaStonesA = mancalaA[0].props.stones
+    const mancalaStonesB = mancalaA[0].props.stones
+   
     return (
       <div className="gameboard">
         <span className="mancalaB">{mancalaB}</span>

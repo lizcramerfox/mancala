@@ -22,33 +22,25 @@ class Pocket extends Component {
     if (this.props.stones === 0) {
       return 'invalid'
     }
-    
+
     return 'valid'
   }
 
-  markWinner = (pocket, otherPocket) => {
-    if (!this.props.game.isOver) {
-      return
-    }
+  // checkWinner = (pocketStones, otherPocketStones) => {
+  //   if (!this.props.game.isOver) {
+  //     return
+  //   }
 
-    if (!this.props.pocket.isMancala) {
-      return
-    }
+  //   if (!this.props.pocket.isMancala) {
+  //     return
+  //   }
 
-    if (pocket > otherPocket || pocket === otherPocket) {
-      return 'winner'
-    }
-  }
+  //   if (pocketStones > otherPocketStones || pocketStones === otherPocketStones) {
+  //     return 'winner'
+  //   }
+  // }
 
   render () {
-    const mancalaPocketStonesA = Array
-      .from(this.props.game.board.pockets.entries())
-      .filter(([pocket, stones]) => pocket.player === "A" && pocket.isMancala === true)
-    
-    const mancalaPocketStonesB = Array
-      .from(this.props.game.board.pockets.entries())
-      .filter(([pocket, stones]) => pocket.player === "B" && pocket.isMancala === true)
-
     const { pocket, stones } = this.props
     const { player, isMancala } = pocket
 
@@ -57,9 +49,10 @@ class Pocket extends Component {
     const pocketID = `${pocket.toString()}`
     const validity = this.checkValidity()
 
-    let classNames = [this.markWinner(mancalaPocketStonesA[0][1], mancalaPocketStonesB[0][1]), validity, playerClass, type, 'pocket'].join(' ')
+    let classNames = [validity, playerClass, type, 'pocket'].join(' ')
+    // this.markWinner(mancalaPocketStonesA[0][1], mancalaPocketStonesB[0][1])
 
-    console.log(this.props.pocket.toString(), classNames)
+    // console.log(`this.props.pocket = `, this.props.pocket)
 
     return (
       <div
