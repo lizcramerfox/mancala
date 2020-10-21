@@ -34,23 +34,23 @@ class GameIndex extends Component {
   render () {
     const { games } = this.state
 
+    console.log(games)
+
     if (games.length < 1) {
-      return (<h3>No Saved Games - Click "Start a New Game".</h3>)
+      return (<h5>No Saved Games - Click "Start a New Game".</h5>)
     }
 
     const gamesJsx = games.map(game => (
-      <li key={game.id}>
-        <Link className="button"to={`/games/${game.id}`}>
-          Game {game.id}
-        </Link>
-      </li>
+      <Link to={`/games/${game.id}`}>
+        <div className="game-preview">
+          Game {game.id}: {game.board}
+        </div>
+      </Link>
     ))
 
     return (
       <div className="index">
-        <ul>
-          {gamesJsx}
-        </ul>
+        {gamesJsx}
       </div>
     )
   }
