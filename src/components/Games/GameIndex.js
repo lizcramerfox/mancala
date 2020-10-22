@@ -13,7 +13,7 @@ class GameIndex extends Component {
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     const { msgAlert } = this.props
     gameIndex(this.props.user)
       .then(res => {
@@ -31,19 +31,38 @@ class GameIndex extends Component {
       })
   }
 
-  render () {
+  // // REFACTOR:
+  // mancalaStones(player) {
+  //   return Array.from(this.state.games)
+  //     .find(([pocket, stones]) => pocket.player === player && pocket.isMancala === true)
+  // }
+
+  // // REFACTOR:
+  // oppositePlayer(player) {
+  //   return player === 'A' ? 'B' : 'A'
+  // }
+
+  // // REFACTOR:
+  // isWinner(player) {
+  //   if (!this.props.game.isOver) {
+  //     return false
+  //   }
+  //   return this.mancalaStones(player) >= this.mancalaStones(this.oppositePlayer(player))
+  // }
+
+
+  render() {
     const { games } = this.state
-
-    console.log(games)
-
+    
     if (games.length < 1) {
       return (<h5>No Saved Games - Click "Start a New Game".</h5>)
     }
 
     const gamesJsx = games.map(game => (
-      <Link to={`/games/${game.id}`}>
+      <Link to={`/games/${game.id}`} key={game.id}>
         <div className="game-preview">
-          Game {game.id}: {game.board}
+          <div>Game | {game.id}</div>
+          <div>Board | {game.board}</div>
         </div>
       </Link>
     ))
