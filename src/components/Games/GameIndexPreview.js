@@ -4,18 +4,6 @@ import './games.module.scss'
 
 class GameIndexPreview extends Component {
   // REFACTOR:
-  // mancalaStones(player) {
-  //   const pocketsArray = this.props.game.board.split(',')
-    
-  //   if (player === 'A') {
-  //     return pocketsArray[6].split(':')[1] 
-  //   } 
-
-  //   if (player === 'B') {
-  //     return pocketsArray[13].split(':')[1]
-  //   }
-  // }
-
   mancalaStones(player) {
     return Array.from(this.props.game.board.pockets.entries())
       .find(([pocket, stones]) => pocket.player === player && pocket.isMancala === true)[1]
@@ -36,26 +24,63 @@ class GameIndexPreview extends Component {
 
 
   render() {
+    let gameStatusLabel, playerStatusLabel, gameStatusClass, winnerClass
+    
+    if (!this.props.game.isOver) {
+      gameStatusLabel = 'In Progress'
+      playerStatusLabel = `Player ${this.props.game.currentPlayer}'s Turn`
+      gameStatusClass = 'in-progress'
+      winnerClass = ''
+    }
 
-    console.log(`A = `, this.mancalaStones('A'))
-    console.log(`B = `, this.mancalaStones('B'))
-    // let status
-    // if (!this.props.game.isOver) {
-    //   status =  
-    // }
+    if (this.isWinner('A') && this.isWinner('B')) {
+      gameStatusLabel = 'GAME OVER'
+      playerStatusLabel = 'Tie Game'
+      gameStatusClass = 'game-over'
+      winnerClass = 'winner-tie'
+    }
 
+    if (this.isWinner('A') && !this.isWinner('B')) {
+      gameStatusLabel = 'GAME OVER'
+      playerStatusLabel = 'Player A Wins'
+      gameStatusClass = 'game-over'
+      winnerClass = 'winner-a'
+    }
 
-    const previewJsx = (
-      <div className="game-preview">
-        <div>Board | {this.props.game.board}</div>
-        <div>Current Player | {this.props.game.currentPlayer}</div>
-        <div>Winner | </div>
+    if (this.isWinner('B') && !this.isWinner('A')) {
+      gameStatusLabel = 'GAME OVER'
+      playerStatusLabel = 'Player B Wins'
+      gameStatusClass = 'game-over'
+      winnerClass = 'winner-b'
+    }
+
+    const gameStatusClassNames = [gameStatusClass, winnerClass].join(' ')
+    const mancalaDisplayClassNames = [gameStatusClass, winnerClass].join(' ')
+    
+    const gameStatusJsx = (
+      <div>
+        <div className={gameStatusClassNames}>{gameStatusLabel}</div>
+        <div className={gameStatusClassNames}>{playerStatusLabel}</div>
+      </div>
+    )
+
+    const mancalaDisplayJsx = (
+      <div>
+        <div className={mancalaDisplayClassNames}>
+          <div>Player A</div>
+          <div>{this.mancalaStones('A')}</div>
+        </div>
+        <div className={mancalaDisplayClassNames}>  
+          <div>Player B</div>
+          <div>{this.mancalaStones('B')}</div>
+        </div>
       </div>
     )
 
     return (
       <div className="game-preview">
-        {previewJsx}
+        <div className="game-status-info">{gameStatusJsx}</div>
+        <div className="mancala-status-info">{mancalaDisplayJsx}</div>
       </div>
     )
   }

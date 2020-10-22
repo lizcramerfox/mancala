@@ -1,9 +1,5 @@
 @import '../../variables';
 
-li {
-  padding-bottom: .5rem;
-}
-
 .delete-container {
   display: flex;
   flex-direction: row-reverse;
@@ -57,7 +53,20 @@ li {
 }
 
 .game-preview {
-  background: $black-85;
-  margin: 0 0 1rem;
-  padding: 1rem 2rem; 
+  box-shadow: $board-box-shadow;
+  padding: 1rem 2rem;
+}
+
+.mancala-display {
+  padding: .5rem 0;
+
+  .a {
+    display: inline;
+    background: $pocket-background-a;
+  }
+
+  .b {
+    display: inline;
+    background: $pocket-background-b;
+  }
 }

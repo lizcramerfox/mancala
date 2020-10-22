@@ -18,7 +18,6 @@ class GameInfo extends Component {
     if (!this.props.game.isOver) {
       return false
     }
-
     return this.mancalaStones(player) >= this.mancalaStones(this.oppositePlayer(player))
   }
 
@@ -57,8 +56,6 @@ class GameInfo extends Component {
     if (this.props.game.isOver && (this.mancalaStones('A') === this.mancalaStones('B'))) {
       infoJsx = <Fragment><span className={classNamesGameOver}>Tie Game!</span></Fragment>
     }
-
-    console.log(`winnerClass = `, winnerClass)
 
     return (
       <div className="game-info">
