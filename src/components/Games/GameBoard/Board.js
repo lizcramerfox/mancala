@@ -3,16 +3,18 @@ import './gameboard.module.scss'
 import Pocket from './Pocket'
 
 class Board extends Component {
-  // Refactor later:
+  // REFACTOR:
   mancalaStones(player) {
     return Array.from(this.props.game.board.pockets.entries())
       .find(([pocket, stones]) => pocket.player === player && pocket.isMancala === true)[1]
   }
-
+  
+  // REFACTOR:
   oppositePlayer(player) {
     return player === 'A' ? 'B' : 'A'
   }
 
+  // REFACTOR:
   isWinner(player) {
     if (!this.props.game.isOver) {
       return false
@@ -20,7 +22,6 @@ class Board extends Component {
 
     return this.mancalaStones(player) >= this.mancalaStones(this.oppositePlayer(player))
   }
-
 
   render() {
     const entriesArray = Array.from(this.props.game.board.pockets.entries())
