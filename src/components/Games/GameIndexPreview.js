@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import './games.module.scss'
 
@@ -22,7 +22,6 @@ class GameIndexPreview extends Component {
     return this.mancalaStones(player) >= this.mancalaStones(this.oppositePlayer(player))
   }
 
-
   render() {
     let gameStatusLabel, playerStatusLabel, gameStatusClass, winnerClass
     
@@ -37,7 +36,7 @@ class GameIndexPreview extends Component {
       gameStatusLabel = 'GAME OVER'
       playerStatusLabel = 'Tie Game'
       gameStatusClass = 'game-over'
-      winnerClass = 'winner-tie'
+      winnerClass = 'winner-a winner-b'
     }
 
     if (this.isWinner('A') && !this.isWinner('B')) {
@@ -54,33 +53,20 @@ class GameIndexPreview extends Component {
       winnerClass = 'winner-b'
     }
 
-    const gameStatusClassNames = [gameStatusClass, winnerClass].join(' ')
-    const mancalaDisplayClassNames = [gameStatusClass, winnerClass].join(' ')
+    const classNames = ["game-preview", gameStatusClass, winnerClass].join(' ')
     
-    const gameStatusJsx = (
-      <div>
-        <div className={gameStatusClassNames}>{gameStatusLabel}</div>
-        <div className={gameStatusClassNames}>{playerStatusLabel}</div>
-      </div>
-    )
 
-    const mancalaDisplayJsx = (
-      <div>
-        <div className={mancalaDisplayClassNames}>
-          <div>Player A</div>
-          <div>{this.mancalaStones('A')}</div>
-        </div>
-        <div className={mancalaDisplayClassNames}>  
-          <div>Player B</div>
-          <div>{this.mancalaStones('B')}</div>
-        </div>
-      </div>
-    )
 
     return (
-      <div className="game-preview">
-        <div className="game-status-info">{gameStatusJsx}</div>
-        <div className="mancala-status-info">{mancalaDisplayJsx}</div>
+      <div className={classNames}>
+        <div className="game-status-label">{gameStatusLabel}</div>
+        <div className="player-status-label">{playerStatusLabel}</div>
+        <div className="mancala-display">
+          <div className="player-a-label">Player A</div>
+          <div className="stones-a">{this.mancalaStones('A')}</div>
+          <div className="player-b-label">Player B</div>
+          <div className="stones-b">{this.mancalaStones('B')}</div>
+        </div>
       </div>
     )
   }

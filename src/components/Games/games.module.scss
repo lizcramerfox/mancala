@@ -1,5 +1,6 @@
 @import '../../variables';
 
+
 .delete-container {
   display: flex;
   flex-direction: row-reverse;
@@ -49,6 +50,7 @@
 }
 
 .index {
+  align-content: center;
   padding: 1rem 2rem;
 }
 
@@ -57,16 +59,58 @@
   padding: 1rem 2rem;
 }
 
-.mancala-display {
-  padding: .5rem 0;
+.in-progress {
+  background: $white-15;
+}
 
-  .a {
-    display: inline;
+.game-over {
+  background: $black-15;
+}
+
+.game-status-label {
+  padding: .5rem 0;
+  text-align: center;
+}
+
+.player-status-label {
+  padding: 0 0 1rem;
+  text-align: center;
+}
+
+.mancala-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: .5fr .5fr;
+  grid-column-gap: 1rem;
+  text-align: center;
+
+
+  .player-a-label {
     background: $pocket-background-a;
+    font-family: $title-alt-font;
+    grid-area: 1 / 1 / 2 / 2;
+    height: 1.5rem;
+    padding: .5rem;
   }
 
-  .b {
-    display: inline;
+  .player-b-label {
     background: $pocket-background-b;
+    font-family: $title-alt-font;
+    grid-area: 1 / 2 / 2 / 3;
+    height: 1.5rem;
+    padding: .5rem;
+  }
+
+  .stones-a {
+    font-family: $title-font;
+    font-size: 3rem;
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .stones-b {
+    font-family: $title-font;
+    font-size: 3rem;
+    grid-area: 2 / 2 / 3 / 3;
   }
 }
+
