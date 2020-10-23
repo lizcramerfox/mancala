@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { gameIndex } from '../../api/game'
 import GameIndexPreview from './GameIndexPreview'
 import messages from '../AutoDismissAlert/messages'
@@ -15,7 +15,7 @@ class GameIndex extends Component {
       games: []
     }
   }
-
+  
   componentDidMount() {
     const { msgAlert } = this.props
 
@@ -43,11 +43,9 @@ class GameIndex extends Component {
     }
 
     const gamesJsx = games.map(game => (
-      <Link to={`/games/${game.id}`} key={game.id}>
-        <GameIndexPreview game={Mancala.Game.fromJSON(game)} />
-      </Link>
+      <GameIndexPreview game={Mancala.Game.fromJSON(game)} id={game.id}/>
     ))
-
+    
     return (
       <div className="index">
         {gamesJsx}

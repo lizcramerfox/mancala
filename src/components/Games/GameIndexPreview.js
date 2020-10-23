@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from 'react'
-import { withRouter } from 'react-router-dom'
+import React, { Component } from 'react'
+import { withRouter, Link } from 'react-router-dom'
 import './games.module.scss'
 
 class GameIndexPreview extends Component {
@@ -22,6 +22,7 @@ class GameIndexPreview extends Component {
     return this.mancalaStones(player) >= this.mancalaStones(this.oppositePlayer(player))
   }
 
+  
   render() {
     let gameStatusLabel, playerStatusLabel, gameStatusClass, winnerClass
     
@@ -54,11 +55,9 @@ class GameIndexPreview extends Component {
     }
 
     const classNames = ["game-preview", gameStatusClass, winnerClass].join(' ')
-    
-
-
+  
     return (
-      <div className={classNames}>
+      <Link to={`/games/${this.props.id}`} className={classNames}>
         <div className="game-status-label">{gameStatusLabel}</div>
         <div className="player-status-label">{playerStatusLabel}</div>
         <div className="mancala-display">
@@ -67,7 +66,7 @@ class GameIndexPreview extends Component {
           <div className="player-b-label">Player B</div>
           <div className="stones-b">{this.mancalaStones('B')}</div>
         </div>
-      </div>
+      </Link>
     )
   }
 }

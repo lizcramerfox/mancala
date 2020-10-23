@@ -50,8 +50,13 @@
 }
 
 .index {
-  align-content: center;
-  padding: 1rem 2rem;
+  padding: 2rem;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 2fr));
+  grid-template-rows: repeat(auto, 1fr);
+  align-items: center;
+  justify-content: space-between;
 }
 
 .game-preview {
