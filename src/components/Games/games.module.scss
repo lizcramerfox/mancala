@@ -1,6 +1,5 @@
 @import '../../variables';
 
-
 .delete-container {
   display: flex;
   flex-direction: row-reverse;
@@ -60,16 +59,15 @@
 }
 
 .game-preview {
-  box-shadow: $board-box-shadow;
-  padding: 1rem 2rem;
-}
-
-.in-progress {
-  background: $white-15;
-}
-
-.game-over {
   background: $black-15;
+  border-radius: .8rem;
+  box-shadow: $preview-shadow-inset;
+  padding: 2rem;
+
+  &:hover {
+    box-shadow: $preview-shadow-inset, $preview-shadow-hover;
+    color: $white-85;
+  }  
 }
 
 .game-status-label {
@@ -85,16 +83,14 @@
 .mancala-display {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: .5fr .5fr;
+  grid-template-rows: .25fr .75fr;
   grid-column-gap: 1rem;
   text-align: center;
-
 
   .player-a-label {
     background: $pocket-background-a;
     font-family: $title-alt-font;
     grid-area: 1 / 1 / 2 / 2;
-    height: 1.5rem;
     padding: .5rem;
   }
 
@@ -102,7 +98,7 @@
     background: $pocket-background-b;
     font-family: $title-alt-font;
     grid-area: 1 / 2 / 2 / 3;
-    height: 1.5rem;
+
     padding: .5rem;
   }
 

@@ -35,7 +35,6 @@ p {
   padding: .1rem;
   
   &:hover {
-    box-shadow: $button-shadow-inset, $button-shadow-low-pop;
-    text-shadow: $button-text-shadow-white;
+    box-shadow: $button-shadow-hover;
   }
 }
