@@ -111,7 +111,11 @@
   .stones-b {
     font-family: $title-font;
     font-size: 3rem;
-    grid-area: 2 / 2 / 3 / 3;
+    grid-area: 2 / 2 / 3 / 3;  
   }
+}
+
+.in-progress {
+  box-shadow: $preview-shadow-in-progress;
 }
 

@@ -26,6 +26,15 @@ class GameIndexPreview extends Component {
   render() {
     let gameStatusLabel, playerStatusLabel, gameStatusClass, winnerClass
     
+    let winnerClassA = []
+   
+    let winnerClassB = []
+
+
+
+
+
+
     if (!this.props.game.isOver) {
       gameStatusLabel = 'In Progress'
       playerStatusLabel = `Player ${this.props.game.currentPlayer}'s Turn`
