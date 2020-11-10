@@ -24,46 +24,33 @@ class GameIndexPreview extends Component {
 
   
   render() {
-    let gameStatusLabel, playerStatusLabel, gameStatusClass, winnerClass
-    
-    let winnerClassA = []
-   
-    let winnerClassB = []
-
-
-
-
-
+    let gameStatusLabel, playerStatusLabel, gameStatusClass
 
     if (!this.props.game.isOver) {
       gameStatusLabel = 'In Progress'
       playerStatusLabel = `Player ${this.props.game.currentPlayer}'s Turn`
       gameStatusClass = 'in-progress'
-      winnerClass = ''
     }
 
     if (this.isWinner('A') && this.isWinner('B')) {
       gameStatusLabel = 'GAME OVER'
       playerStatusLabel = 'Tie Game'
       gameStatusClass = 'game-over'
-      winnerClass = 'winner-a winner-b'
     }
 
     if (this.isWinner('A') && !this.isWinner('B')) {
       gameStatusLabel = 'GAME OVER'
       playerStatusLabel = 'Player A Wins'
       gameStatusClass = 'game-over'
-      winnerClass = 'winner-a'
     }
 
     if (this.isWinner('B') && !this.isWinner('A')) {
       gameStatusLabel = 'GAME OVER'
       playerStatusLabel = 'Player B Wins'
       gameStatusClass = 'game-over'
-      winnerClass = 'winner-b'
     }
 
-    const classNames = ["game-preview", gameStatusClass, winnerClass].join(' ')
+    const classNames = ["game-preview", gameStatusClass].join(' ')
   
     return (
       <Link to={`/games/${this.props.id}`} className={classNames}>

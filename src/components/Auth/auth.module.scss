@@ -23,13 +23,13 @@ h3 {
   box-shadow: $header-box-shadow;
   font-family: $body-font;
   margin: 2rem 0;
-  padding: .5rem 1rem;
+  padding: .5rem 1rem 0 1rem;
   position: fixed;
   z-index: 10000;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  width: 75%;
+  width: 80%;
 }
 
 .form-element {
@@ -73,7 +73,7 @@ h3 {
   }
 
   50% {
-    transform: translateX(5%);
+    transform: translateX(1%);
   }
 
   100% {
