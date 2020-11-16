@@ -1,25 +1,26 @@
 import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import './games.module.scss'
+import { mancalaStones, oppositePlayer } from './GameHelpers'
 
 class GameIndexPreview extends Component {
   // REFACTOR:
-  mancalaStones(player) {
-    return Array.from(this.props.game.board.pockets.entries())
-      .find(([pocket, stones]) => pocket.player === player && pocket.isMancala === true)[1]
-  }
+  // mancalaStones(player) {
+  //   return Array.from(this.props.game.board.pockets.entries())
+  //     .find(([pocket, stones]) => pocket.player === player && pocket.isMancala === true)[1]
+  // }
 
   // REFACTOR:
-  oppositePlayer(player) {
-    return player === 'A' ? 'B' : 'A'
-  }
+  // oppositePlayer(player) {
+  //   return player === 'A' ? 'B' : 'A'
+  // }
 
   // REFACTOR:
   isWinner(player) {
     if (!this.props.game.isOver) {
       return false
     }
-    return this.mancalaStones(player) >= this.mancalaStones(this.oppositePlayer(player))
+    return mancalaStones(this.props.game, player) >= mancalaStones(this.props.game, oppositePlayer(player))
   }
 
   
@@ -58,9 +59,9 @@ class GameIndexPreview extends Component {
         <div className="player-status-label">{playerStatusLabel}</div>
         <div className="mancala-display">
           <div className="player-a-label">Player A</div>
-          <div className="stones-a">{this.mancalaStones('A')}</div>
+          <div className="stones-a">{mancalaStones(this.props.game, 'A')}</div>
           <div className="player-b-label">Player B</div>
-          <div className="stones-b">{this.mancalaStones('B')}</div>
+          <div className="stones-b">{mancalaStones(this.props.game, 'B')}</div>
         </div>
       </Link>
     )
