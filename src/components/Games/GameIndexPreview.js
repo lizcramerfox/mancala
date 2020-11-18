@@ -9,7 +9,7 @@ class GameIndexPreview extends Component {
     let gameStatusLabel, playerStatusLabel, gameStatusClass
 
     if (!this.props.game.isOver) {
-      gameStatusLabel = 'In Progress'
+      gameStatusLabel = 'IN PROGRESS'
       playerStatusLabel = `Player ${this.props.game.currentPlayer}'s Turn`
       gameStatusClass = 'in-progress'
     } else if (isWinner(this.props.game, 'A') && isWinner(this.props.game, 'B')) {

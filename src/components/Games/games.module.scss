@@ -67,7 +67,7 @@
   &:hover {
     box-shadow: $preview-shadow-inset, $preview-shadow-hover;
     color: $white-85;
-  }  
+  }
 }
 
 .game-status-label {
@@ -98,7 +98,6 @@
     background: $pocket-background-b;
     font-family: $title-alt-font;
     grid-area: 1 / 2 / 2 / 3;
-
     padding: .5rem;
   }
 
