@@ -1,6 +1,6 @@
-@import 'variables';
+@import "variables";
 
-$background-img: url('/metal-texture.jpg');
+$background-img: url("/public/metal-texture.jpg");
 
 body {
   background-color: $black-50;
@@ -13,14 +13,14 @@ body {
 h4 {
   color: $white-75;
   font-family: $title-alt-font;
-  font-size: 2rem;  
+  font-size: 2rem;
   font-weight: 200;
-  letter-spacing: .05rem;
+  letter-spacing: 0.05rem;
 }
 
 input {
   background: $form-input;
-  padding: .2rem .3rem;
+  padding: 0.2rem 0.3rem;
 }
 
 p {
@@ -32,8 +32,8 @@ p {
   border: none;
   box-shadow: $button-shadow-black;
   font-family: $body-font;
-  padding: .1rem;
-  
+  padding: 0.1rem;
+
   &:hover {
     box-shadow: $button-shadow-hover;
   }
