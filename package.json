@@ -1,6 +1,6 @@
 {
   "name": "mancala",
-  "homepage": "https://lizcramerfox.github.io/mancala-client",
+  "homepage": "https://lizcramerfox.github.io/mancala",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
