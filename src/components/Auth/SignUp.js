@@ -110,6 +110,7 @@ class SignUp extends Component {
             />
             <input
               className="button"
+              onClick={this.onSignUp}
               type="submit"
               value="Submit"
             />
