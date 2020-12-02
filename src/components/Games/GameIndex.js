@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import { gameIndex } from '../../api/game'
 import GameIndexPreview from './GameIndexPreview'
 import messages from '../AutoDismissAlert/messages'
 import Mancala from 'mancala'
 import './games.module.scss'
+import '../Home/home.module.scss'
 
 
 class GameIndex extends Component {
@@ -37,17 +38,31 @@ class GameIndex extends Component {
 
   render() {
     const { games } = this.state
+    console.log(games.length)
+    let gamesJsx
+    let classNames
     
-    if (games.length < 1) {
-      return (<h5>No Saved Games - Click "Start a New Game".</h5>)
+    if (games.length === 0) {
+      classNames = "index empty"
+      gamesJsx = (
+        <Fragment>
+          <h5>No Saved Games - Click "New Game" to Start</h5>
+          <a className="big-button" href="#/games-create">
+            New Game     
+          </a>
+        </Fragment>
+      )
+    } else {
+      classNames = "index full"
+      gamesJsx = games.map(game => (
+        <GameIndexPreview game={Mancala.Game.fromJSON(game)} id={game.id}/>
+      ))
     }
 
-    const gamesJsx = games.map(game => (
-      <GameIndexPreview game={Mancala.Game.fromJSON(game)} id={game.id}/>
-    ))
+    
     
     return (
-      <div className="index">
+      <div className={classNames}>
         {gamesJsx}
       </div>
     )

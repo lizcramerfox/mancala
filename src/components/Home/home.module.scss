@@ -4,19 +4,24 @@
   display: flex;
   padding: $container-element-padding;
   justify-content: center;
+  
+  .big-button {
+    width: 30%;
+  }
 }
+
 
 .big-button {
   background: $big-button-background;
   border: none;
   box-shadow: $button-shadow-black, $button-shadow-white, $big-button-shadow-inset;
-  font-family: $body-font;
+  font-family: $title-alt-font;
+  font-size: 2rem;
   border-radius: .5rem;
   text-align: center;
   text-shadow: $big-button-text-shadow;
-  margin: 0 2rem;
-  padding: 1rem 1rem;
-  width: 30%;
+  margin: 2rem 1rem;
+  padding: 2rem 2rem;
 
   &:hover {
     background: $big-button-background-hover;

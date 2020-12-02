@@ -56,6 +56,16 @@
   grid-template-rows: repeat(auto, 1fr);
   align-items: center;
   justify-content: space-between;
+
+  .big-button {
+    width: 20rem;
+    margin: 1rem 0;
+  }
+}
+
+.empty {
+  display: block;
+  align-content: center;
 }
 
 .game-preview {

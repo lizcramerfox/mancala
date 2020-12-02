@@ -89,7 +89,7 @@ class SignUp extends Component {
             />
           </div>
           <div className="form-element">
-            <label className='form-label'>Confirm Password</label>
+            <label className="form-label">Confirm Password</label>
             <input
               className="text-input"
               required={true}
@@ -105,12 +105,11 @@ class SignUp extends Component {
             <input
               className="button"
               onClick={this.goBack}
-              type="submit"
+              type="button"
               value="Cancel"
             />
             <input
               className="button"
-              onClick={this.onSignUp}
               type="submit"
               value="Submit"
             />

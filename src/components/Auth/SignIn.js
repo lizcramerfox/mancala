@@ -86,12 +86,11 @@ class SignIn extends Component {
             <input
               className="button"
               onClick={this.goBack}
-              type="submit"
+              type="button"
               value="Cancel"
             />
             <input
               className="button"
-              onClick={this.onSignIn}
               type="submit"
               value="Submit"
             />
