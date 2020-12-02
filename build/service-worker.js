@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["/mancala/index.html","cc68020bfbf70b113817d67576c5d348"],["/mancala/static/js/main.7cc3871c.js","25873c8d2cd61185fd05647ddb494778"]];
+var precacheConfig = [["/mancala/index.html","7b216543f6ada246ce3f759a3642e69f"],["/mancala/static/js/main.014dbc5f.js","64c6e436b04d6f5230e6860fb206017b"]];
 var cacheName = 'sw-precache-v3-sw-precache-webpack-plugin-' + (self.registration ? self.registration.scope : '');
 
 
