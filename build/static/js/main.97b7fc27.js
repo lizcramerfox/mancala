@@ -11237,7 +11237,7 @@ exports = module.exports = __webpack_require__(6)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  background-color: #00000080;\n  background-image: url(\"/metal-texture.jpg\");\n  color: #ffffffd9;\n  font-family: \"Montserrat\", sans-serif;\n  margin: 0; }\n\nh4 {\n  color: #ffffffbf;\n  font-family: \"Bungee Inline\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200;\n  letter-spacing: .05rem; }\n\nh5 {\n  font-size: 1.5rem;\n  padding: 1rem 0;\n  margin: 0 0 3rem; }\n\ninput {\n  background: #ffffff59;\n  padding: .2rem .3rem; }\n\np {\n  display: inline; }\n\n.button {\n  background: #ffffff33;\n  border: none;\n  box-shadow: 0 0 0.5rem #00000080;\n  font-family: \"Montserrat\", sans-serif;\n  padding: .1rem; }\n  .button:hover {\n    box-shadow: 0 0 0.5rem #ffffff; }\n", ""]);
+exports.push([module.i, "body {\n  background-color: #00000080;\n  background-image: url(\"https://i.imgur.com/QoGVKoK.jpg\");\n  color: #ffffffd9;\n  font-family: \"Montserrat\", sans-serif;\n  margin: 0; }\n\nh4 {\n  color: #ffffffbf;\n  font-family: \"Bungee Inline\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200;\n  letter-spacing: .05rem; }\n\nh5 {\n  font-size: 1.5rem;\n  padding: 1rem 0;\n  margin: 0 0 3rem; }\n\ninput {\n  background: #ffffff59;\n  padding: .2rem .3rem; }\n\np {\n  display: inline; }\n\n.button {\n  background: #ffffff33;\n  border: none;\n  box-shadow: 0 0 0.5rem #00000080;\n  font-family: \"Montserrat\", sans-serif;\n  padding: .1rem; }\n  .button:hover {\n    box-shadow: 0 0 0.5rem #ffffff; }\n", ""]);
 
 // exports
 
@@ -31586,4 +31586,4 @@ var _createClass=function(){function defineProperties(target,props){for(var i=0;
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=main.014dbc5f.js.map
+//# sourceMappingURL=main.97b7fc27.js.map
